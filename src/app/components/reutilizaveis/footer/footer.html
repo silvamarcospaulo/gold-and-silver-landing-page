@@ -1,0 +1,66 @@
+<footer id="footer">
+    <div id="container-footer">
+        <div id="footer-logo">
+            <img src="assets/logo-footer.svg" alt="Logo Gold & Silver" />
+        </div>
+
+        <nav class="footer-nav">
+            <ul class="footer-nav-list">
+                @for (link of linksFooter; track link) {
+                <li>
+                    <a [routerLink]="link.url">{{ link.label }}</a>
+                </li>
+                }
+            </ul>
+        </nav>
+
+        <div id="footer-social">
+            <a href="https://www.instagram.com/goldesilverdistribuicao_/" target="_blank" aria-label="Instagram"
+                class="footer-social-link">
+                <i class="bi bi-instagram" aria-hidden="true"></i> Instagram
+            </a>
+        </div>
+    </div>
+
+    <div id="footer-contacts">
+        <div class="contact-column">
+            <h4>Unidade Brasília</h4>
+            <p>Quadra QI 14, Lotes 42 a 50, Setor Industrial, Taguatinga</p>
+            <p>CEP: 72135-140 – Brasília/DF</p>
+            <p>
+                <i class="bi bi-telephone-fill"></i> (61) 99272-3979
+            </p>
+            <p>
+                <i class="bi bi-envelope-fill"></i>
+                <a href="mailto:johnherbertt_rv@hotmail.com">
+                    johnherbertt_rv&#64;hotmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-column">
+            <h4>Unidade Goiânia</h4>
+            <p>Rua 7, nº 97 – Quadra 41, Lote 11, Jardim Santo Antônio</p>
+            <p>CEP: 74853-200 – Goiânia/GO</p>
+        </div>
+
+        <div class="contact-column">
+            <h4>Unidade Rio Verde</h4>
+            <p>Rua Otoniel da Cunha, Quadra 10, Lote G, Setor Eldorado</p>
+            <p>CEP: 75903-860 – Rio Verde/GO</p>
+            <p>
+                <i class="bi bi-whatsapp"></i> (64) 98127-9654
+            </p>
+        </div>
+    </div>
+
+    <div id="footer-bottom">
+        <p>&copy; 2025 Gold & Silver Distribuição. Todos os direitos reservados.</p>
+        <p>
+            Desenvolvido por
+            <a href="https://www.marcospaulosilva.com.br" target="_blank" rel="noopener noreferrer">
+                Marcos Paulo Silva
+            </a>.
+        </p>
+    </div>
+</footer>

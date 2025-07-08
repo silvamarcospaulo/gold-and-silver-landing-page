@@ -1,0 +1,19 @@
+<section id="inicio">
+    <app-carrossel [imagensCarrossel]="imagensCarrossel" />
+
+    <div id="promocionais">
+        <div class="promo-grid">
+            @for (item of promoItems; track item) {
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class={{item.icon}}></i>
+                </div>
+                <div class="promo-text">
+                    <h3>{{ item.label }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

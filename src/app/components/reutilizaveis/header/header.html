@@ -1,0 +1,24 @@
+<header id="header">
+    <div class="container-header">
+        <div id="logo-header">GOLD & SILVER</div>
+
+        <button class="menu-toggle-header" (click)="toggleMenu()">&#9776;</button>
+
+        <nav [class.open]="menuAberto">
+            <ul class="nav-list-header">
+                <li><a href="#">HOME</a></li>
+
+                <li class="dropdown-header">
+                    <button class="dropdown-btn-header" (click)="toggleDropdown()">LINHA DE PRODUTOS</button>
+                    <ul class="dropdown-list-header" [class.show]="dropdownAberto">
+                        @for (categoria of categorias; track categoria) {
+                        <li>
+                            <a href="#" (click)="selecionarCategoria(categoria)">{{ categoria }}</a>
+                        </li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

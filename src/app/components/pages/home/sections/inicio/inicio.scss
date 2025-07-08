@@ -1,0 +1,92 @@
+#inicio {
+    margin-top: 10vh;
+    width: 100%;
+    background-color: var(--color-background);
+    flex-direction: column;
+    display: flex;
+    place-items: center;
+    place-content: center;
+
+    #promocionais {
+        width: 100%;
+        height: 15vh;
+        background-color: var(--color-secondary);
+        display: flex;
+        justify-content: center;
+
+        .promo-grid {
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: space-between;
+            place-items: center;
+        }
+
+        .promo-card {
+            display: flex;
+            place-content: center;
+            place-items: center;
+            flex-direction: column;
+            height: 100%;
+            max-width: 200px;
+            background-color: var(--color-secondary);
+            color: var(--color-text);
+            transition: transform 0.3s ease;
+            text-align: center;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+
+            .promo-icon {
+                font-size: 1.8vw;
+                color: var(--color-accent);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    fill: var(--color-accent);
+                }
+            }
+
+            .promo-text {
+                h3 {
+                    font-size: 1vw;
+                    color: var(--color-accent);
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 0.7vw;
+                    color: var(--color-light);
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        #carousel-inicio .carousel-img {
+            max-height: 400px;
+        }
+
+        #promocionais {
+
+            .promo-card {
+                .promo-icon {
+                    font-size: 4vw;
+                }
+
+                .promo-text h3 {
+                    font-size: 3vw;
+                }
+
+                .promo-text p {
+                    font-size: 2vw;
+                }
+            }
+        }
+
+    }
+}
