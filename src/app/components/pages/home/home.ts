@@ -26,4 +26,21 @@ export class Home {
     { src: 'assets/images/carrossel/salabranca.jpg', alt: 'Slide 2' },
     { src: 'assets/images/carrossel/salaverde.jpg', alt: 'Slide 3' }
   ]
+
+  categorias: string[] = [
+    'ROUPEIROS',
+    'COMODAS',
+    'BALCÕES',
+    'COZINHAS',
+    'MULTIUSOS',
+    'FOGÕES',
+    'TUBOLARES',
+    'CAMAS',
+    'ESTOFADOS',
+    'LAVADORAS',
+    'SALA',
+    'FRUTEIRAS',
+    'TÚBUA',
+    'CADEIRAS'
+  ];
 }
