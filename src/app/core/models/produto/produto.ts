@@ -1,6 +1,6 @@
 export class Produto {
     public id!: number;
-    public categoria?: string;
+    public categoria?: string[];
     public nomeDoProduto?: string;
     public descricao?: string;
     public cor?: string;

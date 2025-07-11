@@ -57,17 +57,19 @@
     width: 100%;
 }
 
-#menu-toggle-categoria {
-    display: flex;
+#menu-toggle-categoria,
+#botao-limpar-categoria {
     font-size: 1rem;
-    background: none;
     color: var(--color-text);
-    background-color: var(--color-primary);
     border: none;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 10px 0 0 10px;
     transition: transform 0.25s ease;
+}
+
+#menu-toggle-categoria {
+    background-color: var(--color-primary);
+    border-radius: 10px 0 0 10px;
 
     &:hover {
         transform: scale(1.04);
@@ -75,23 +77,14 @@
 }
 
 #botao-limpar-categoria {
-    display: flex;
-    font-size: 1rem;
-    background: none;
-    color: var(--color-text);
     background-color: var(--color-muted);
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
     border-radius: 0 10px 10px 0;
-    transition: transform 0.25s ease;
 
     &:hover {
         transform: scale(1.04);
         background-color: var(--color-accent);
     }
 }
-
 
 #nav-list-categoria {
     display: none;

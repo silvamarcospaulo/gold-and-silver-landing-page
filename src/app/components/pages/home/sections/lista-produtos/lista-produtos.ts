@@ -1,8 +1,12 @@
-// lista-produtos.ts
-import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+} from '@angular/core';
 import { Produto } from '../../../../../core/models/produto/produto';
 import { CardProduto } from './card-produto/card-produto';
-
 
 @Component({
   selector: 'app-lista-produtos',
@@ -11,10 +15,8 @@ import { CardProduto } from './card-produto/card-produto';
   styleUrl: './lista-produtos.scss',
   imports: [CardProduto]
 })
-
 export class ListaProdutos implements OnChanges {
   @Input() produtos: Produto[] = [];
-  produto!: Produto;
   @Input() categorias: string[] = [];
   @Input() categoriaFiltrada: string | null = null;
   @Output() categoriaSelecionada = new EventEmitter<string>();
@@ -30,9 +32,15 @@ export class ListaProdutos implements OnChanges {
   }
 
   get produtosFiltrados(): Produto[] {
-    return this.produtos.filter(p =>
-      !this.categoriaAtual || p.categoria === this.categoriaAtual
-    );
+    return this.produtos.filter(p => {
+      if (!this.categoriaAtual) return true;
+
+      if (Array.isArray(p.categoria)) {
+        return p.categoria.includes(this.categoriaAtual);
+      }
+
+      return p.categoria === this.categoriaAtual;
+    });
   }
 
   get totalPaginas(): number {
@@ -63,6 +71,24 @@ export class ListaProdutos implements OnChanges {
   }
 
   mudarPagina(pagina: number) {
-    this.paginaAtual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaAtual = pagina;
+    }
+  }
+
+  get paginasExibidas(): number[] {
+    const total = this.totalPaginas;
+    const atual = this.paginaAtual;
+
+    const inicio = Math.max(1, atual - 2);
+    const fim = Math.min(total, inicio + 3);
+
+    const paginas: number[] = [];
+
+    for (let i = inicio; i <= fim; i++) {
+      paginas.push(i);
+    }
+
+    return paginas;
   }
 }

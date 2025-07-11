@@ -29,11 +29,19 @@
         </div>
 
         <div id="paginacao">
-            @for (pagina of [].constructor(totalPaginas); track $index; let i = index" (click)="mudarPagina(i + 1)) {
-            <button [class.ativa]="paginaAtual === i + 1">
-                {{ i + 1 }}
+            <button (click)="mudarPagina(paginaAtual - 1)" [disabled]="paginaAtual === 1">
+                <i class="bi bi-arrow-left-short"></i>
+            </button>
+
+            @for (pagina of paginasExibidas; track $index; let i = $index) {
+            <button [class.ativa]="paginaAtual === pagina" (click)="mudarPagina(pagina)">
+                {{ pagina }}
             </button>
             }
+
+            <button (click)="mudarPagina(paginaAtual + 1)" [disabled]="paginaAtual === totalPaginas">
+                <i class="bi bi-arrow-right-short"></i>
+            </button>
         </div>
     </div>
 </section>
