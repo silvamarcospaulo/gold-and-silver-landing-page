@@ -7,10 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./header.scss']
 })
 export class Header {
-  menuAberto = false;
-
   @Input() categorias: string[] = [];
   @Output() categoriaSelecionada = new EventEmitter<string>();
+  menuAberto = false;
 
   toggleMenu() {
     this.menuAberto = !this.menuAberto;

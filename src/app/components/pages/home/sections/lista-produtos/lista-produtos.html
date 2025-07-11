@@ -1,5 +1,25 @@
 <section id="lista-produtos">
     <div id="container-lista-produtos">
+        <div id="filtragem">
+            <div id="filtragem-titulo">
+                <h1>Lista de Produtos</h1>
+            </div>
+
+            <div id="filtro-categorias">
+                <div id="menu-categorias">
+                    <button id="menu-toggle-categoria" (click)="toggleMenu()">Categorias</button>
+                    <button id="botao-limpar-categoria" (click)="limparFiltro()">Limpar</button>
+                </div>
+                <nav id="nav-list-categoria" [class.open]="menuAberto">
+                    @for (categoria of categorias; track categoria) {
+                    <button class="categoria-link" (click)="selecionarCategoria(categoria)">
+                        {{ categoria }}
+                    </button>
+                    }
+                </nav>
+            </div>
+        </div>
+
         <div id="grid-produtos">
             @for (produto of produtosPaginados; track produto.nomeDoProduto) {
             <a [routerLink]="['/produto', produto.nomeDoProduto]" class="card-link">

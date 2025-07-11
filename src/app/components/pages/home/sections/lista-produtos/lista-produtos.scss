@@ -4,29 +4,144 @@
     display: flex;
     place-content: center;
     place-items: center;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 #container-lista-produtos {
     width: 100%;
     height: 100%;
-    padding: 2rem;
     max-width: 1400px;
     display: flex;
-    place-content: center;
-    place-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#filtragem {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    place-items: center;
+    flex-direction: row;
+}
+
+#filtragem-titulo {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    place-content: start;
+    place-items: center;
+    padding: 1rem;
+    color: var(--color-text);
+
+    h1 {
+        color: var(--color-text);
+        font-size: 1.5rem;
+        text-align: start;
+    }
+}
+
+#filtro-categorias {
+    width: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#menu-categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#menu-toggle-categoria {
+    display: flex;
+    font-size: 1rem;
+    background: none;
+    color: var(--color-text);
+    background-color: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 10px 0 0 10px;
+    transition: transform 0.25s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+#botao-limpar-categoria {
+    display: flex;
+    font-size: 1rem;
+    background: none;
+    color: var(--color-text);
+    background-color: var(--color-muted);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0 10px 10px 0;
+    transition: transform 0.25s ease;
+
+    &:hover {
+        transform: scale(1.04);
+        background-color: var(--color-accent);
+    }
+}
+
+
+#nav-list-categoria {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    background-color: var(--color-primary);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 999;
+    padding: 0.5rem;
+}
+
+#nav-list-categoria.open {
+    display: flex;
+}
+
+.categoria-link {
+    color: var(--color-text);
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    text-align: left;
+    font-size: 1rem;
+    width: 100%;
+    transition: transform 0.25s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+
+    &:focus-visible {
+        color: var(--color-accent);
+        background-color: var(--color-secondary);
+    }
 }
 
 #grid-produtos {
     width: 100%;
-    height: 80%;
+    min-height: 80vh;
     display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
+    padding: 2rem 0;
 }
 
 .card-link {
@@ -35,9 +150,11 @@
 }
 
 #paginacao {
-    margin-top: 2.5rem;
+    width: 100%;
+    height: 10vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 0.6rem;
 
     button {
@@ -50,21 +167,31 @@
         font-weight: 500;
         transition: background 0.2s ease;
 
-        &.ativa,
-        &:hover {
+        &.ativa {
             background-color: var(--color-accent);
-            color: #fff;
+        }
+
+        &:hover {
+            background-color: var(--color-muted);
         }
     }
 }
 
-/* --------- RESPONSIVO --------- */
-@media (max-width: 768px) {
-    #grid-produtos {
-        gap: 1.2rem;
+@media screen and (max-width: 768px) {
+    #filtragem {
+        flex-direction: column;
     }
 
-    #paginacao button {
-        padding: 0.5rem 0.9rem;
+    #filtragem-titulo {
+        place-content: center;
+        width: 100%;
+    }
+
+    #filtro-categorias {
+        flex-direction: column;
+    }
+
+    #grid-produtos {
+        flex-direction: column;
     }
 }

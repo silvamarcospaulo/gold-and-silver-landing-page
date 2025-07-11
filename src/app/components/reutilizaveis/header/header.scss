@@ -44,7 +44,10 @@
 
 .categoria-link {
     color: var(--color-text);
-    text-decoration: none;
+    background: none;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    border: none;
     font-weight: 500;
     padding: 0.4rem 0.6rem;
     transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;

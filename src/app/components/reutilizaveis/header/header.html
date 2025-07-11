@@ -4,9 +4,9 @@
         <button id="menu-toggle-header" (click)="toggleMenu()">&#9776;</button>
         <nav id="nav-list-header" [class.open]="menuAberto">
             @for (categoria of categorias; track categoria) {
-            <a class="categoria-link" (click)="selecionarCategoria(categoria)">
+            <button class="categoria-link" (click)="selecionarCategoria(categoria)">
                 {{ categoria }}
-            </a>
+            </button>
             }
         </nav>
     </div>

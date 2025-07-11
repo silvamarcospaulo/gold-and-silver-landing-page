@@ -1,26 +1,34 @@
-import { Component, Input } from '@angular/core';
+// lista-produtos.ts
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Produto } from '../../../../../core/models/produto/produto';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { CardProduto } from './card-produto/card-produto';
+
 
 @Component({
   selector: 'app-lista-produtos',
   standalone: true,
-  imports: [CommonModule, RouterModule, CardProduto],
   templateUrl: './lista-produtos.html',
-  styleUrls: ['./lista-produtos.scss']
+  styleUrl: './lista-produtos.scss'
 })
-export class ListaProdutos {
-  @Input() produtos: Produto[] = [];
-  @Input() categoriaSelecionada: string = '';
 
+export class ListaProdutos implements OnChanges {
+  @Input() produtos: Produto[] = [];
+  @Input() categorias: string[] = [];
+  @Input() categoriaFiltrada: string | null = null;
+  @Output() categoriaSelecionada = new EventEmitter<string>();
+
+  menuAberto = false;
   itensPorPagina = 8;
   paginaAtual = 1;
+  categoriaAtual: string = '';
+
+  ngOnChanges() {
+    this.categoriaAtual = this.categoriaFiltrada || '';
+    this.paginaAtual = 1;
+  }
 
   get produtosFiltrados(): Produto[] {
     return this.produtos.filter(p =>
-      !this.categoriaSelecionada || p.categoria === this.categoriaSelecionada
+      !this.categoriaAtual || p.categoria === this.categoriaAtual
     );
   }
 
@@ -33,7 +41,25 @@ export class ListaProdutos {
     return this.produtosFiltrados.slice(start, start + this.itensPorPagina);
   }
 
-  mudarPagina(novaPagina: number) {
-    this.paginaAtual = novaPagina;
+  toggleMenu() {
+    this.menuAberto = !this.menuAberto;
+  }
+
+  selecionarCategoria(categoria: string) {
+    this.categoriaAtual = categoria;
+    this.paginaAtual = 1;
+    this.menuAberto = false;
+    this.categoriaSelecionada.emit(categoria);
+  }
+
+  limparFiltro() {
+    this.categoriaAtual = '';
+    this.paginaAtual = 1;
+    this.menuAberto = false;
+    this.categoriaSelecionada.emit('');
+  }
+
+  mudarPagina(pagina: number) {
+    this.paginaAtual = pagina;
   }
 }

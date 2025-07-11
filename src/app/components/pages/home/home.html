@@ -1,4 +1,4 @@
-<app-header [categorias]="categorias" />
+<app-header (categoriaSelecionada)="atualizarCategoriaFiltrada($event)" />
 <app-inicio [imagensCarrossel]="imagensCarrossel" />
-<app-lista-produtos [produtos]="produtos" />
+<app-lista-produtos [produtos]="produtos" [categorias]="categorias" [categoriaFiltrada]="categoriaFiltrada" />
 <app-footer [linksFooter]="linksFooter" />
