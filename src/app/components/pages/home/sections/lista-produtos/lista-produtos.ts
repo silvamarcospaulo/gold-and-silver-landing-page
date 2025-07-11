@@ -5,16 +5,18 @@ import {
   EventEmitter,
   OnChanges
 } from '@angular/core';
-import { Produto } from '../../../../../core/models/produto/produto';
 import { CardProduto } from './card-produto/card-produto';
+import { RouterModule } from '@angular/router';
+import { Produto } from '../../../../../core/models/produto/produto';
 
 @Component({
   selector: 'app-lista-produtos',
   standalone: true,
   templateUrl: './lista-produtos.html',
   styleUrl: './lista-produtos.scss',
-  imports: [CardProduto]
+  imports: [CardProduto, RouterModule]
 })
+
 export class ListaProdutos implements OnChanges {
   @Input() produtos: Produto[] = [];
   @Input() categorias: string[] = [];

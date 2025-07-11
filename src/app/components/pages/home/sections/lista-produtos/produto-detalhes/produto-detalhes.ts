@@ -1,70 +1,21 @@
-import { Component } from '@angular/core';
-import { Header } from "./sections/header/header";
-import { Footer } from "../../reutilizaveis/footer/footer";
-import { Inicio } from "./sections/inicio/inicio";
-import { Link } from '../../../core/models/link/link';
-import { CarouselItem } from '../../../core/models/carouselItem/carousel-item';
-import { ListaProdutos } from "./sections/lista-produtos/lista-produtos";
-import { Produto } from '../../../core/models/produto/produto';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Produto } from '../../../../../../core/models/produto/produto';
+import { Footer } from "../../../../../reutilizaveis/footer/footer";
+import { HeaderDetalhes } from './header-detalhes/header-detalhes';
 
 @Component({
-  selector: 'app-home',
-  imports: [Header, Footer, Inicio, ListaProdutos],
+  selector: 'app-produto-detalhes',
   standalone: true,
-  templateUrl: './home.html',
-  styleUrl: './home.scss'
+  imports: [CommonModule, HeaderDetalhes, Footer],
+  templateUrl: './produto-detalhes.html',
+  styleUrls: ['./produto-detalhes.scss']
 })
 
-export class Home {
-  linksFooter: Link[] = [
-    { label: 'Sobre', url: '/sobre' },
-    { label: 'Produtos', url: '/produtos' },
-    { label: 'Contato', url: '/contato' },
-    { label: 'Política de Privacidade', url: '/politica-privacidade' }
-  ];
-
-  imagensCarrossel: CarouselItem[] = [
-    { src: 'assets/images/carrossel/salaarborizada.jpg', alt: 'Slide 1' },
-    { src: 'assets/images/carrossel/salabranca.jpg', alt: 'Slide 2' },
-    { src: 'assets/images/carrossel/salaverde.jpg', alt: 'Slide 3' }
-  ]
-
-  categorias: string[] = [
-    "Acessórios",
-    "Acoplados",
-    "Aparador",
-    "Balcão",
-    "Banheiro",
-    "Base",
-    "Buffet",
-    "Cadeira",
-    "Cama",
-    "Climatização",
-    "Colchao",
-    "Comoda",
-    "Cozinha",
-    "Eletrodomésticos",
-    "Em Aço",
-    "Escrivaninha",
-    "Espelho",
-    "Estante",
-    "Estofado",
-    "Fogão",
-    "Fruteira",
-    "Guarda Roupas",
-    "Infantil",
-    "Lavadora",
-    "Mesa",
-    "Modulados",
-    "Painel",
-    "Penteadeira",
-    "Porta de Correr",
-    "Quarto",
-    "Rack",
-    "Sala",
-    "Sapateiras",
-    "Tubular"
-  ];
+export class ProdutoDetalhes implements OnInit {
+  private route = inject(ActivatedRoute);
+  produto?: Produto;
 
   produtos: Produto[] =
     [
@@ -11122,10 +11073,12 @@ export class Home {
       }
     ];
 
-  categoriaFiltrada: string | null = null;
-
-  atualizarCategoriaFiltrada(categoria: string) {
-    this.categoriaFiltrada = categoria;
+  ngOnInit() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.produto = this.mockBuscarProduto(id);
   }
 
+  mockBuscarProduto(id: number): Produto | undefined {
+    return this.produtos.find(p => p.id === id);
+  }
 }
