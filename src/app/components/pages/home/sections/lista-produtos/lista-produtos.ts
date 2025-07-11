@@ -1,17 +1,20 @@
 // lista-produtos.ts
 import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Produto } from '../../../../../core/models/produto/produto';
+import { CardProduto } from './card-produto/card-produto';
 
 
 @Component({
   selector: 'app-lista-produtos',
   standalone: true,
   templateUrl: './lista-produtos.html',
-  styleUrl: './lista-produtos.scss'
+  styleUrl: './lista-produtos.scss',
+  imports: [CardProduto]
 })
 
 export class ListaProdutos implements OnChanges {
   @Input() produtos: Produto[] = [];
+  produto!: Produto;
   @Input() categorias: string[] = [];
   @Input() categoriaFiltrada: string | null = null;
   @Output() categoriaSelecionada = new EventEmitter<string>();

@@ -1,26 +1,26 @@
 export class Produto {
-    idProduto!: number;
-    categoria!: string;
-    nomeDoProduto!: string;
-    descricao!: string;
-    cor?: string;
-    altura?: number;
-    largura?: number;
-    profundidade?: number;
-    comprimento?: number;
-    diametro?: number;
-    capacidade?: number;
-    quantidadeDePortas?: number;
-    quantidadeDeBocas?: number;
-    quantidadeDeLugares?: number;
-    formato?: string;
-    tamanho?: string;
-    tipo?: string;
-    comOuSemBraco?: string;
-    quantidadeDePrateleiras?: number;
-    imagem?: string;
+    public id!: number;
+    public categoria?: string;
+    public nomeDoProduto?: string;
+    public descricao?: string;
+    public cor?: string;
+    public altura?: number;
+    public largura?: number;
+    public profundidade?: number;
+    public comprimento?: number;
+    public diametro?: number;
+    public capacidade?: number;
+    public quantidadeDePortas?: number;
+    public quantidadeDeBocas?: number;
+    public quantidadeDeLugares?: number;
+    public formato?: string;
+    public tamanho?: string;
+    public tipo?: string;
+    public comOuSemBraco?: string;
+    public quantidadeDePrateleiras?: number;
+    public imagem?: string;
 
-    constructor(init?: Partial<Produto>) {
+    constructor(init: Partial<Produto>) {
         Object.assign(this, init);
     }
 }

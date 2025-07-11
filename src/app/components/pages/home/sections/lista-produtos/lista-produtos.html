@@ -22,17 +22,18 @@
 
         <div id="grid-produtos">
             @for (produto of produtosPaginados; track produto.nomeDoProduto) {
-            <a [routerLink]="['/produto', produto.nomeDoProduto]" class="card-link">
+            <a href="['/produto', produto.id]" class="card-link">
                 <app-card-produto [produto]="produto" />
             </a>
             }
         </div>
 
         <div id="paginacao">
-            <button *ngFor="let pagina of [].constructor(totalPaginas); let i = index" (click)="mudarPagina(i + 1)"
-                [class.ativa]="paginaAtual === i + 1">
+            @for (pagina of [].constructor(totalPaginas); track $index; let i = index" (click)="mudarPagina(i + 1)) {
+            <button [class.ativa]="paginaAtual === i + 1">
                 {{ i + 1 }}
             </button>
+            }
         </div>
     </div>
 </section>
