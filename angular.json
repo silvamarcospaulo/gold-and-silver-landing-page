@@ -20,9 +20,7 @@
             "outputPath": "dist/gold-and-silver",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -59,7 +57,6 @@
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -68,10 +65,10 @@
             },
             "development": {
               "optimization": false,
-              "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true,
               "aot": false,
+              "extractLicenses": false,
               "vendorChunk": true
             }
           },
