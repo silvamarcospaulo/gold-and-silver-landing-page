@@ -9,10 +9,12 @@
 
     #promocionais {
         width: 100%;
-        height: 15vh;
+        height: auto;
         background-color: var(--color-secondary);
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
         .promo-grid {
             width: 100%;
@@ -21,6 +23,19 @@
             display: flex;
             justify-content: space-between;
             place-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .promo-carousel {
+            width: 100%;
+            overflow: hidden;
+            max-width: 1400px;
+
+            .carousel-track {
+                display: flex;
+                width: 100%;
+                transition: transform 0.5s ease-in-out;
+            }
         }
 
         .promo-card {
@@ -34,13 +49,15 @@
             color: var(--color-text);
             transition: transform 0.3s ease;
             text-align: center;
+            flex: 0 0 100%;
+            padding: 1rem;
 
             &:hover {
                 transform: translateY(-3px);
             }
 
             .promo-icon {
-                font-size: 1.8vw;
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
                 color: var(--color-accent);
                 display: flex;
                 align-items: center;
@@ -53,16 +70,24 @@
 
             .promo-text {
                 h3 {
-                    font-size: 1vw;
+                    font-size: clamp(1rem, 2.5vw, 1.5rem);
                     color: var(--color-accent);
                 }
 
                 p {
                     margin: 0;
-                    font-size: 0.7vw;
+                    font-size: clamp(0.75rem, 2vw, 1rem);
                     color: var(--color-light);
                 }
             }
+        }
+
+        .desktop-only {
+            display: flex;
+        }
+
+        .mobile-only {
+            display: none;
         }
     }
 
@@ -72,21 +97,38 @@
         }
 
         #promocionais {
+            .promo-grid {
+                display: none;
+            }
+
+            .promo-carousel {
+                display: block;
+            }
 
             .promo-card {
+                max-width: 100%;
+                flex: 0 0 100%;
+
                 .promo-icon {
-                    font-size: 4vw;
+                    font-size: clamp(2rem, 6vw, 3rem);
                 }
 
                 .promo-text h3 {
-                    font-size: 3vw;
+                    font-size: clamp(1.2rem, 5vw, 1.8rem);
                 }
 
                 .promo-text p {
-                    font-size: 2vw;
+                    font-size: clamp(0.9rem, 4vw, 1.2rem);
                 }
             }
-        }
 
+            .desktop-only {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+        }
     }
 }
