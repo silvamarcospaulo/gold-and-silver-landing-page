@@ -9,6 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class Header {
   @Input() categorias: string[] = [];
   @Output() categoriaSelecionada = new EventEmitter<string>();
+  @Output() scrollParaProdutos = new EventEmitter<void>();
+
   menuAberto = false;
 
   toggleMenu() {
@@ -18,5 +20,6 @@ export class Header {
   selecionarCategoria(categoria: string) {
     this.menuAberto = false;
     this.categoriaSelecionada.emit(categoria);
+    this.scrollParaProdutos.emit();
   }
 }

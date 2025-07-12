@@ -1,4 +1,10 @@
-<app-header (categoriaSelecionada)="atualizarCategoriaFiltrada($event)" />
+<app-header [categorias]="categorias" (categoriaSelecionada)="atualizarCategoriaFiltrada($event)"
+    (scrollParaProdutos)="rolarParaProdutos()" />
 <app-inicio [imagensCarrossel]="imagensCarrossel" />
-<app-lista-produtos [produtos]="produtos" [categorias]="categorias" [categoriaFiltrada]="categoriaFiltrada" />
+<app-video-seo />
+<section #secaoProdutos>
+    <app-lista-produtos [produtos]="produtos" [categorias]="categorias" [categoriaFiltrada]="categoriaFiltrada" />
+</section>
+<app-video-phiz-chat />
+
 <app-footer [linksFooter]="linksFooter" />

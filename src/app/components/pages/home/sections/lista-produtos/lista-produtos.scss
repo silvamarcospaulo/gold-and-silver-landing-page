@@ -157,7 +157,7 @@
         padding: 0.6rem 1.2rem;
         border-radius: 4px;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 100;
         transition: background 0.2s ease;
 
         &.ativa {
@@ -191,5 +191,17 @@
 
     #grid-produtos {
         flex-direction: column;
+    }
+
+    #paginacao {
+        min-height: 10vh;
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 0.4rem;
+
+        button {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.7rem;
+        }
     }
 }

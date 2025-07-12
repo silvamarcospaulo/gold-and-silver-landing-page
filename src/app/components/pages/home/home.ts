@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Header } from "./sections/header/header";
 import { Footer } from "../../reutilizaveis/footer/footer";
 import { Inicio } from "./sections/inicio/inicio";
@@ -6,16 +6,19 @@ import { Link } from '../../../core/models/link/link';
 import { CarouselItem } from '../../../core/models/carouselItem/carousel-item';
 import { ListaProdutos } from "./sections/lista-produtos/lista-produtos";
 import { Produto } from '../../../core/models/produto/produto';
+import { VideoSeo } from "./sections/video-seo/video-seo";
+import { VideoPhizChat } from "./sections/video-phiz-chat/video-phiz-chat";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, Inicio, ListaProdutos],
+  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-
 export class Home {
+  @ViewChild('secaoProdutos') secaoProdutos!: ElementRef;
+
   linksFooter: Link[] = [
     { label: 'Sobre', url: '/sobre' },
     { label: 'Produtos', url: '/produto' },
@@ -27,43 +30,14 @@ export class Home {
     { src: 'assets/images/carrossel/salaarborizada.jpg', alt: 'Slide 1' },
     { src: 'assets/images/carrossel/salabranca.jpg', alt: 'Slide 2' },
     { src: 'assets/images/carrossel/salaverde.jpg', alt: 'Slide 3' }
-  ]
+  ];
 
   categorias: string[] = [
-    "Acessórios",
-    "Acoplados",
-    "Aparador",
-    "Balcão",
-    "Banheiro",
-    "Base",
-    "Buffet",
-    "Cadeira",
-    "Cama",
-    "Climatização",
-    "Colchao",
-    "Comoda",
-    "Cozinha",
-    "Eletrodomésticos",
-    "Em Aço",
-    "Escrivaninha",
-    "Espelho",
-    "Estante",
-    "Estofado",
-    "Fogão",
-    "Fruteira",
-    "Guarda Roupas",
-    "Infantil",
-    "Lavadora",
-    "Mesa",
-    "Modulados",
-    "Painel",
-    "Penteadeira",
-    "Porta de Correr",
-    "Quarto",
-    "Rack",
-    "Sala",
-    "Sapateiras",
-    "Tubular"
+    "Acessórios", "Acoplados", "Aparador", "Balcão", "Banheiro", "Base", "Buffet",
+    "Cadeira", "Cama", "Climatização", "Colchao", "Comoda", "Cozinha", "Eletrodomésticos",
+    "Em Aço", "Escrivaninha", "Espelho", "Estante", "Estofado", "Fogão", "Fruteira",
+    "Guarda Roupas", "Infantil", "Lavadora", "Mesa", "Modulados", "Painel", "Penteadeira",
+    "Porta de Correr", "Quarto", "Rack", "Sala", "Sapateiras", "Tubular"
   ];
 
   produtos: Produto[] =
@@ -11128,4 +11102,12 @@ export class Home {
     this.categoriaFiltrada = categoria;
   }
 
+  rolarParaProdutos() {
+    if (this.secaoProdutos) {
+      this.secaoProdutos.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 }
