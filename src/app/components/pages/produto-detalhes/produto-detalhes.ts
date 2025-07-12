@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Produto } from '../../../../../../core/models/produto/produto';
-import { Footer } from "../../../../../reutilizaveis/footer/footer";
 import { HeaderDetalhes } from './header-detalhes/header-detalhes';
+import { Footer } from '../../reutilizaveis/footer/footer';
+import { Produto } from '../../../core/models/produto/produto';
 
 @Component({
   selector: 'app-produto-detalhes',

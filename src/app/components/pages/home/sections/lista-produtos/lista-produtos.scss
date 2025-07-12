@@ -164,8 +164,13 @@
             background-color: var(--color-accent);
         }
 
-        &:hover {
+        &:hover:not(.ativa) {
             background-color: var(--color-muted);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
         }
     }
 }

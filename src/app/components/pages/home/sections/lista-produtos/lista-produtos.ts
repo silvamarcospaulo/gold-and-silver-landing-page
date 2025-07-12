@@ -8,15 +8,15 @@ import {
 import { CardProduto } from './card-produto/card-produto';
 import { RouterModule } from '@angular/router';
 import { Produto } from '../../../../../core/models/produto/produto';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-produtos',
   standalone: true,
   templateUrl: './lista-produtos.html',
   styleUrl: './lista-produtos.scss',
-  imports: [CardProduto, RouterModule]
+  imports: [CardProduto, RouterModule, CommonModule]
 })
-
 export class ListaProdutos implements OnChanges {
   @Input() produtos: Produto[] = [];
   @Input() categorias: string[] = [];
@@ -36,11 +36,9 @@ export class ListaProdutos implements OnChanges {
   get produtosFiltrados(): Produto[] {
     return this.produtos.filter(p => {
       if (!this.categoriaAtual) return true;
-
       if (Array.isArray(p.categoria)) {
         return p.categoria.includes(this.categoriaAtual);
       }
-
       return p.categoria === this.categoriaAtual;
     });
   }
@@ -81,16 +79,21 @@ export class ListaProdutos implements OnChanges {
   get paginasExibidas(): number[] {
     const total = this.totalPaginas;
     const atual = this.paginaAtual;
+    let start = Math.max(1, atual - 2);
+    let end = Math.min(total, atual + 2);
 
-    const inicio = Math.max(1, atual - 2);
-    const fim = Math.min(total, inicio + 3);
-
-    const paginas: number[] = [];
-
-    for (let i = inicio; i <= fim; i++) {
-      paginas.push(i);
+    if (end - start < 4) {
+      if (start === 1) {
+        end = Math.min(total, start + 4);
+      } else if (end === total) {
+        start = Math.max(1, end - 4);
+      }
     }
 
+    const paginas: number[] = [];
+    for (let i = start; i <= end; i++) {
+      paginas.push(i);
+    }
     return paginas;
   }
 }

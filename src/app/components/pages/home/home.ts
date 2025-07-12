@@ -18,7 +18,7 @@ import { Produto } from '../../../core/models/produto/produto';
 export class Home {
   linksFooter: Link[] = [
     { label: 'Sobre', url: '/sobre' },
-    { label: 'Produtos', url: '/produtos' },
+    { label: 'Produtos', url: '/produto' },
     { label: 'Contato', url: '/contato' },
     { label: 'Política de Privacidade', url: '/politica-privacidade' }
   ];

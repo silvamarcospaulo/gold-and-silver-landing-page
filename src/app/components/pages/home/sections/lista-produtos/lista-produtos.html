@@ -1,47 +1,45 @@
 <section id="lista-produtos">
-    <div id="container-lista-produtos">
-        <div id="filtragem">
-            <div id="filtragem-titulo">
-                <h1>Lista de Produtos</h1>
-            </div>
+  <div id="container-lista-produtos">
+    <div id="filtragem">
+      <div id="filtragem-titulo">
+        <h1>Lista de Produtos</h1>
+      </div>
 
-            <div id="filtro-categorias">
-                <div id="menu-categorias">
-                    <button id="menu-toggle-categoria" (click)="toggleMenu()">Categorias</button>
-                    <button id="botao-limpar-categoria" (click)="limparFiltro()">Limpar</button>
-                </div>
-                <nav id="nav-list-categoria" [class.open]="menuAberto">
-                    @for (categoria of categorias; track categoria) {
-                    <button class="categoria-link" (click)="selecionarCategoria(categoria)">
-                        {{ categoria }}
-                    </button>
-                    }
-                </nav>
-            </div>
+      <div id="filtro-categorias">
+        <div id="menu-categorias">
+          <button id="menu-toggle-categoria" (click)="toggleMenu()">Categorias</button>
+          <button id="botao-limpar-categoria" (click)="limparFiltro()">Limpar</button>
         </div>
-
-        <div id="grid-produtos">
-            @for (produto of produtosPaginados; track produto.nomeDoProduto) {
-            <a [routerLink]="['/produtos', produto.id]" class="card-link">
-                <app-card-produto [produto]="produto" />
-            </a>
-            }
-        </div>
-
-        <div id="paginacao">
-            <button (click)="mudarPagina(paginaAtual - 1)" [disabled]="paginaAtual === 1">
-                <i class="bi bi-arrow-left-short"></i>
+        <nav id="nav-list-categoria" [class.open]="menuAberto">
+          @for (categoria of categorias; track categoria) {
+            <button class="categoria-link" (click)="selecionarCategoria(categoria)">
+              {{ categoria }}
             </button>
-
-            @for (pagina of paginasExibidas; track $index; let i = $index) {
-            <button [class.ativa]="paginaAtual === pagina" (click)="mudarPagina(pagina)">
-                {{ pagina }}
-            </button>
-            }
-
-            <button (click)="mudarPagina(paginaAtual + 1)" [disabled]="paginaAtual === totalPaginas">
-                <i class="bi bi-arrow-right-short"></i>
-            </button>
-        </div>
+          }
+        </nav>
+      </div>
     </div>
+
+    <div id="grid-produtos">
+      @for (produto of produtosPaginados; track produto.nomeDoProduto) {
+        <a [routerLink]="['/produto', produto.id]" class="card-link">
+          <app-card-produto [produto]="produto" />
+        </a>
+      }
+    </div>
+
+    <div id="paginacao">
+      <button (click)="mudarPagina(1)" [disabled]="paginaAtual === 1">«</button>
+      <button (click)="mudarPagina(paginaAtual - 1)" [disabled]="paginaAtual === 1">‹</button>
+
+      <button *ngFor="let pagina of paginasExibidas"
+              (click)="mudarPagina(pagina)"
+              [class.ativa]="paginaAtual === pagina">
+        {{ pagina }}
+      </button>
+
+      <button (click)="mudarPagina(paginaAtual + 1)" [disabled]="paginaAtual === totalPaginas">›</button>
+      <button (click)="mudarPagina(totalPaginas)" [disabled]="paginaAtual === totalPaginas">»</button>
+    </div>
+  </div>
 </section>
