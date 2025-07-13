@@ -4,14 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "gold-and-silver": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
       "root": "",
       "sourceRoot": "src",
+      "projectType": "application",
       "prefix": "app",
       "architect": {
         "build": {
@@ -62,17 +57,18 @@
               "sourceMap": false,
               "namedChunks": false,
               "aot": true,
+              "buildOptimizer": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "vendorChunk": false
             },
             "development": {
               "optimization": false,
               "sourceMap": true,
               "namedChunks": true,
-              "aot": false,
+              "aot": true,
               "extractLicenses": false,
-              "vendorChunk": true
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"
@@ -117,6 +113,6 @@
     }
   },
   "cli": {
-    "analytics": "4cfaf2ef-3c36-4e40-98c2-9b00f3d1a6fd"
+    "analytics": false
   }
 }

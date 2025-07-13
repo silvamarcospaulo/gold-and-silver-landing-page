@@ -6,11 +6,11 @@
 
         <nav class="footer-nav">
             <ul class="footer-nav-list">
-                @for (link of linksFooter; track link) {
-                <li>
-                    <a [routerLink]="link.url">{{ link.label }}</a>
+                <li *ngFor="let link of linksFooter">
+                    <a href="#" (click)="go(link.url, $event)">
+                        {{ link.label }}
+                    </a>
                 </li>
-                }
             </ul>
         </nav>
 
@@ -27,9 +27,7 @@
             <h4>Brasília</h4>
             <p>Quadra QI 14, Lotes 42 a 50, Setor Industrial, Taguatinga</p>
             <p>CEP: 72135-140 – Brasília/DF</p>
-            <p>
-                <i class="bi bi-telephone-fill"></i> (61) 99272-3979
-            </p>
+            <p><i class="bi bi-telephone-fill"></i> (61) 99272-3979</p>
             <p>
                 <i class="bi bi-envelope-fill"></i>
                 <a href="mailto:johnherbertt_rv@hotmail.com">
@@ -48,9 +46,7 @@
             <h4>Rio Verde</h4>
             <p>Rua Otoniel da Cunha, Quadra 10, Lote G, Setor Eldorado</p>
             <p>CEP: 75903-860 – Rio Verde/GO</p>
-            <p>
-                <i class="bi bi-whatsapp"></i> (64) 98127-9654
-            </p>
+            <p><i class="bi bi-whatsapp"></i> (64) 98127-9654</p>
         </div>
     </div>
 

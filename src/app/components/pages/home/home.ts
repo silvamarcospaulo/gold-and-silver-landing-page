@@ -20,10 +20,10 @@ export class Home {
   @ViewChild('secaoProdutos') secaoProdutos!: ElementRef;
 
   linksFooter: Link[] = [
-    { label: 'Sobre', url: '/sobre' },
-    { label: 'Produtos', url: '/produto' },
-    { label: 'Contato', url: '/contato' },
-    { label: 'Política de Privacidade', url: '/politica-privacidade' }
+    { label: 'Home', url: '#inicio' },
+    { label: 'Seja um revendedor autorizado', url: '#video-seo' },
+    { label: 'Catálogo', url: '#lista-produtos' },
+    { label: 'Conheça nossa loja', url: '#video-phiz-chat' },
   ];
 
   imagensCarrossel: CarouselItem[] = [
