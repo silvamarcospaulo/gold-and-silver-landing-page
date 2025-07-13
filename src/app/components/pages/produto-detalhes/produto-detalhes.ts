@@ -11074,6 +11074,7 @@ export class ProdutoDetalhes implements OnInit {
     ];
 
   ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.produto = this.mockBuscarProduto(id);
   }
