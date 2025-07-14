@@ -9,6 +9,7 @@ import { CardProduto } from './card-produto/card-produto';
 import { RouterModule } from '@angular/router';
 import { Produto } from '../../../../../core/models/produto/produto';
 import { CommonModule } from '@angular/common';
+import { ScrollService } from '../../../../../core/services/scroll.service';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -31,6 +32,14 @@ export class ListaProdutos implements OnChanges {
   ngOnChanges() {
     this.categoriaAtual = this.categoriaFiltrada || '';
     this.paginaAtual = 1;
+  }
+
+  constructor(private scroll: ScrollService) { }
+
+  go(url: string, event: Event) {
+    event.preventDefault();
+    const id = url.replace(/^#/, '');
+    this.scroll.scrollTo(id);
   }
 
   get produtosFiltrados(): Produto[] {

@@ -3,7 +3,8 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    place-items: center;
+    place-content: center;
     background-color: var(--color-primary);
     border-radius: 6px;
     overflow: hidden;
@@ -12,13 +13,33 @@
     &:hover {
         transform: scale(1.04);
     }
+}
+
+#card-imagem {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 70%;
+    background-color: var(--color-accent);
+    overflow: hidden;
 
     img {
+        display: flex;
+        place-content: center;
+        place-items: center;
         width: 100%;
-        height: 220px;
-        background-color: var(--color-accent);
+        height: auto;
         object-fit: cover;
     }
+}
+
+#card-titulo-produto {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 30%;
 
     h3 {
         width: 100%;

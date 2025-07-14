@@ -1,4 +1,3 @@
-// footer.ts
 import { Component, Input } from '@angular/core';
 import { Link } from '../../../core/models/link/link';
 import { ScrollService } from '../../../core/services/scroll.service';

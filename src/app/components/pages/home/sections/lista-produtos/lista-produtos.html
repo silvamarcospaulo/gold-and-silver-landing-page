@@ -15,7 +15,8 @@
         </div>
         <nav id="nav-list-categoria" [class.open]="menuAberto">
           @for (categoria of categorias; track categoria) {
-          <button class="categoria-link" (click)="selecionarCategoria(categoria)">
+          <button class="categoria-link" (click)="go('#lista-produtos', $event)"
+            (click)="selecionarCategoria(categoria)">
             {{ categoria }}
           </button>
           }
@@ -32,16 +33,19 @@
     </div>
 
     <div id="paginacao">
-      <button (click)="mudarPagina(1)" [disabled]="paginaAtual === 1">«</button>
-      <button (click)="mudarPagina(paginaAtual - 1)" [disabled]="paginaAtual === 1">‹</button>
+      <button (click)="go('#lista-produtos', $event)" (click)="mudarPagina(1)" [disabled]="paginaAtual === 1">«</button>
+      <button (click)="go('#lista-produtos', $event)" (click)="mudarPagina(paginaAtual - 1)"
+        [disabled]="paginaAtual === 1">‹</button>
 
-      <button *ngFor="let pagina of paginasExibidas" (click)="mudarPagina(pagina)"
-        [class.ativa]="paginaAtual === pagina">
+      <button *ngFor="let pagina of paginasExibidas" (click)="go('#lista-produtos', $event)"
+        (click)="mudarPagina(pagina)" [class.ativa]="paginaAtual === pagina">
         {{ pagina }}
       </button>
 
-      <button (click)="mudarPagina(paginaAtual + 1)" [disabled]="paginaAtual === totalPaginas">›</button>
-      <button (click)="mudarPagina(totalPaginas)" [disabled]="paginaAtual === totalPaginas">»</button>
+      <button (click)="go('#lista-produtos', $event)" (click)="mudarPagina(paginaAtual + 1)"
+        [disabled]="paginaAtual === totalPaginas">›</button>
+      <button (click)="go('#lista-produtos', $event)" (click)="mudarPagina(totalPaginas)"
+        [disabled]="paginaAtual === totalPaginas">»</button>
     </div>
   </div>
 </section>
