@@ -16,7 +16,6 @@ export class VideoSeo implements AfterViewInit {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log('Intersectando?', entry.isIntersecting);
         if (entry.isIntersecting) {
           video.play().catch((e) => console.error('Erro ao reproduzir:', e));
         } else {
