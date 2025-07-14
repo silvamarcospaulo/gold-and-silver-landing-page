@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CarouselItem } from '../../../../../core/models/carouselItem/carousel-item';
 import { PromoItem } from '../../../../../core/models/promoItem/promo-item';
-import { Carrossel } from './carrossel/carrossel';
-
+import { Carrossel } from '../carrossel/carrossel';
 @Component({
   selector: 'app-inicio',
   standalone: true,

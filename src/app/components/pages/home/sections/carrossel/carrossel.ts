@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CarouselItem } from '../../../../../../core/models/carouselItem/carousel-item';
 import { CommonModule } from '@angular/common';
+import { CarouselItem } from '../../../../../core/models/carouselItem/carousel-item';
 
 @Component({
   selector: 'app-carrossel',
@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class Carrossel {
   @Input() imagensCarrossel: CarouselItem[] = [];
-
   activeIndex = 0;
 
   proximo() {
@@ -19,8 +18,7 @@ export class Carrossel {
   }
 
   anterior() {
-    this.activeIndex =
-      (this.activeIndex - 1 + this.imagensCarrossel.length) % this.imagensCarrossel.length;
+    this.activeIndex = (this.activeIndex - 1 + this.imagensCarrossel.length) % this.imagensCarrossel.length;
   }
 
   irParaSlide(index: number) {

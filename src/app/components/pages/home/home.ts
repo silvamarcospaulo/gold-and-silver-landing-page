@@ -8,10 +8,11 @@ import { ListaProdutos } from "./sections/lista-produtos/lista-produtos";
 import { Produto } from '../../../core/models/produto/produto';
 import { VideoSeo } from "./sections/video-seo/video-seo";
 import { VideoPhizChat } from "./sections/video-phiz-chat/video-phiz-chat";
+import { Carrossel } from './sections/carrossel/carrossel';
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat],
+  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat, Carrossel],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss'
@@ -20,7 +21,7 @@ export class Home {
   @ViewChild('secaoProdutos') secaoProdutos!: ElementRef;
 
   linksFooter: Link[] = [
-    { label: 'Home', url: '#inicio' },
+    { label: 'Home', url: '#carousel-inicio' },
     { label: 'Seja um revendedor autorizado', url: '#video-seo' },
     { label: 'Catálogo', url: '#lista-produtos' },
     { label: 'Conheça nossa loja', url: '#video-phiz-chat' },
