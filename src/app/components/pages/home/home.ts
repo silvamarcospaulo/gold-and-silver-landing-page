@@ -9,10 +9,11 @@ import { Produto } from '../../../core/models/produto/produto';
 import { VideoSeo } from "./sections/video-seo/video-seo";
 import { VideoPhizChat } from "./sections/video-phiz-chat/video-phiz-chat";
 import { Carrossel } from './sections/carrossel/carrossel';
+import { SobreNos } from "./sections/sobre-nos/sobre-nos";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat, Carrossel],
+  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat, Carrossel, SobreNos],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss'
@@ -25,6 +26,7 @@ export class Home {
     { label: 'Seja um revendedor autorizado', url: '#video-seo' },
     { label: 'Catálogo', url: '#lista-produtos' },
     { label: 'Conheça nossa loja', url: '#video-phiz-chat' },
+    { label: 'Sobre nós', url: '#sobre-nos' },
   ];
 
   imagensCarrossel: CarouselItem[] = [
