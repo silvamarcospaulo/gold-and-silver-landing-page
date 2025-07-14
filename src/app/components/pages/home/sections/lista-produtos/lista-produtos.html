@@ -3,6 +3,9 @@
     <div id="filtragem">
       <div id="filtragem-titulo">
         <h1>Lista de Produtos</h1>
+        <h5>
+          {{ categoriaAtual }} @if(categoriaAtual){:} ({{ produtosFiltrados.length }})
+        </h5>
       </div>
 
       <div id="filtro-categorias">
@@ -12,9 +15,9 @@
         </div>
         <nav id="nav-list-categoria" [class.open]="menuAberto">
           @for (categoria of categorias; track categoria) {
-            <button class="categoria-link" (click)="selecionarCategoria(categoria)">
-              {{ categoria }}
-            </button>
+          <button class="categoria-link" (click)="selecionarCategoria(categoria)">
+            {{ categoria }}
+          </button>
           }
         </nav>
       </div>
@@ -22,9 +25,9 @@
 
     <div id="grid-produtos">
       @for (produto of produtosPaginados; track produto.nomeDoProduto) {
-        <a [routerLink]="['/produto', produto.id]" class="card-link">
-          <app-card-produto [produto]="produto" />
-        </a>
+      <a [routerLink]="['/produto', produto.id]" class="card-link">
+        <app-card-produto [produto]="produto" />
+      </a>
       }
     </div>
 
@@ -32,9 +35,8 @@
       <button (click)="mudarPagina(1)" [disabled]="paginaAtual === 1">«</button>
       <button (click)="mudarPagina(paginaAtual - 1)" [disabled]="paginaAtual === 1">‹</button>
 
-      <button *ngFor="let pagina of paginasExibidas"
-              (click)="mudarPagina(pagina)"
-              [class.ativa]="paginaAtual === pagina">
+      <button *ngFor="let pagina of paginasExibidas" (click)="mudarPagina(pagina)"
+        [class.ativa]="paginaAtual === pagina">
         {{ pagina }}
       </button>
 
