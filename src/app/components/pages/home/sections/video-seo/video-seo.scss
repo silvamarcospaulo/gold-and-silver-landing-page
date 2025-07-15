@@ -23,9 +23,11 @@
 }
 
 #video-principal {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 800px;
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    height: 50vh;
+    height: auto;
 }
