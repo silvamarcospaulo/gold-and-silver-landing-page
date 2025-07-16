@@ -10,10 +10,11 @@ import { VideoSeo } from "./sections/video-seo/video-seo";
 import { VideoPhizChat } from "./sections/video-phiz-chat/video-phiz-chat";
 import { Carrossel } from './sections/carrossel/carrossel';
 import { SobreNos } from "./sections/sobre-nos/sobre-nos";
+import { BotaoWhatsApp } from "../../reutilizaveis/botao-whats-app/botao-whats-app";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat, Carrossel, SobreNos],
+  imports: [Header, Footer, Inicio, ListaProdutos, VideoSeo, VideoPhizChat, Carrossel, SobreNos, BotaoWhatsApp],
   standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss'

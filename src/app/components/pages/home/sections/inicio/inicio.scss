@@ -91,7 +91,8 @@
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px),
+    (pointer: coarse) and (max-width: 1024px) {
         #carousel-inicio .carousel-img {
             max-height: 400px;
         }
@@ -107,7 +108,6 @@
 
             .promo-card {
                 max-width: 100%;
-                flex: 0 0 100%;
 
                 .promo-icon {
                     font-size: clamp(2rem, 6vw, 3rem);
