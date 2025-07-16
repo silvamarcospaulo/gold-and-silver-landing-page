@@ -22,12 +22,11 @@
     margin: 0;
 }
 
-#video-principal {
+.video-wrapper {
     aspect-ratio: 16 / 9;
     width: 100%;
     max-width: 800px;
     border-radius: 12px;
-    object-fit: cover;
+    overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    height: auto;
 }
