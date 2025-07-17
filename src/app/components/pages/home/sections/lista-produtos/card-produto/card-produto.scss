@@ -52,9 +52,14 @@
 }
 
 @media (max-width: 768px) {
-    #card-produto img {
-        height: 100%;
-        width: 100%;
+    #card-produto {
+        width: 90vw;
+        height: 90vw;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     #card-produto h3 {
