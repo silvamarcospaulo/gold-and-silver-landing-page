@@ -13,7 +13,7 @@ export class Inicio implements OnInit, OnDestroy {
   @Input() imagensCarrossel!: CarouselItem[];
 
   promoItems: PromoItem[] = [
-    { label: 'LOJA ATACADISTA', description: 'Atendemos lojistas e revendedores', icon: 'bi bi-shop' },
+    // { label: 'LOJA ATACADISTA', description: 'Atendemos lojistas e revendedores', icon: 'bi bi-shop' },
     { label: 'PARCELAMENTO', description: 'Parcele em até 10x sem juros', icon: 'bi bi-credit-card-fill' },
     { label: 'PEDIDOS', description: 'Pedido mínimo promocional de R$ 500,00 até 21/07', icon: 'bi bi-tag' },
     { label: 'FRETE GRÁTIS', description: 'A partir de R$ 1.000,00 para todo Brasil até 21/07', icon: 'bi bi-truck' },

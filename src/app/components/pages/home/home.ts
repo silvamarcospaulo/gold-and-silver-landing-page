@@ -37,13 +37,12 @@ export class Home {
   ];
 
   categorias: string[] = [
-    "Acessórios", "Acoplados", "Adega", "Aparador", "Balcão", "Bancada", "Banheiro",
-    "Base", "Bicicleta", "Buffet", "Cadeira", "Cama", "Climatizador", "Climatização",
-    "Colchão", "Cozinha", "Cômoda", "Eletrodomésticos", "Eletrônicos", "Em Aço",
-    "Escrivaninha", "Espelho", "Esporte e Lazer", "Estante", "Estofado", "Ferramentas",
-    "Fogão", "Fruteira", "Guarda-Roupas", "Infantil", "Lavadora", "Mesa", "Modulados",
-    "Ombrelone", "Painel", "Penteadeira", "Porta de Correr", "Quarto", "Rack", "Roupeiros",
-    "Sala", "Sapateiras", "Sofá", "TV", "Tubular", "Ventilador"
+    "Acessórios", "Acoplados", "Adega", "Aparador", "Balcão", "Bancada",
+    "Base", "Bicicleta", "Buffet", "Cadeira", "Cama", "Climatizador",
+    "Colchão", "Cozinha", "Cômoda", "Eletrodomésticos", "Eletrônicos",
+    "Escrivaninha", "Espelho", "Estante", "Estofado", "Ferramentas",
+    "Fogão", "Fruteira", "Infantil", "Lavadora", "Mesa", "Modulados",
+    "Ombrelone", "Painel", "Penteadeira", "Rack", "Roupeiros", "Sapateiras", "TV", "Ventilador"
   ];
 
   produtos: Produto[] =
@@ -3779,7 +3778,7 @@ export class Home {
       {
         "id": 189594,
         "categoria": [
-          "Sofá"
+          "Estofado"
         ],
         "nomeDoProduto": "ESTOFAD ZEUS C/3 MODULOS 2.9 MTS C/  COPO - MARROM",
         "imagem": "https://phizclip-assets.phiz.live/converted/phizshop/pro/tempImage/2025-05-07/1746638444681b966caea18.webp"
@@ -4971,7 +4970,7 @@ export class Home {
       {
         "id": 181748,
         "categoria": [
-          "Esporte e Lazer"
+          "Bicicleta"
         ],
         "nomeDoProduto": "TINA MINI A-12 FEM. ROSA",
         "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745855749680fa505c5c0b.webp"
