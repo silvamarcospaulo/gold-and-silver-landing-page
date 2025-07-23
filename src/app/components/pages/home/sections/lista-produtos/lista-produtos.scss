@@ -213,3 +213,18 @@
         }
     }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #nav-list-categoria {
+        width: 70%;
+        right: auto;
+    }
+
+    #grid-produtos {
+        gap: 1.5rem;
+    }
+
+    #paginacao button {
+        padding: 0.5rem 1rem;
+    }
+}

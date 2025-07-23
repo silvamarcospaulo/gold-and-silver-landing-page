@@ -143,3 +143,23 @@
         }
     }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #container-video-seo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #video-titulo {
+        flex-direction: column;
+    }
+
+    #titulo-video-seo,
+    #subtitulo-video-seo {
+        writing-mode: unset;
+    }
+
+    .video-wrapper {
+        width: 100%;
+    }
+}
