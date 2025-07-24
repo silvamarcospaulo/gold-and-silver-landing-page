@@ -1,8 +1,14 @@
 <section id="lista-produtos">
   <div id="container-lista-produtos">
+    <div id="cabecalho-catalogo">
+      <h1>Catálogo</h1>
+      <a href="silver-and-gold-catalogo.pdf" class="categoria-link">
+        <i class="bi bi-download"></i>
+        Download Catálogo
+      </a>
+    </div>
     <div id="filtragem">
       <div id="filtragem-titulo">
-        <h1>Lista de Produtos</h1>
         <h5>
           {{ categoriaAtual }}
           <span *ngIf="categoriaAtual">({{ produtosFiltrados.length }})</span>
