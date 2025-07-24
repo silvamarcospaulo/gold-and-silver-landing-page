@@ -33,7 +33,10 @@ export class Home {
   imagensCarrossel: CarouselItem[] = [
     { src: 'assets/images/carrossel/salaarborizada.jpg', alt: 'Slide 1' },
     { src: 'assets/images/carrossel/salabranca.jpg', alt: 'Slide 2' },
-    { src: 'assets/images/carrossel/salaverde.jpg', alt: 'Slide 3' }
+    { src: 'assets/images/carrossel/salaverde.jpg', alt: 'Slide 3' },
+    { src: 'assets/images/carrossel/cafeteira.jpg', alt: 'Slide 4' },
+    { src: 'assets/images/carrossel/cozinha.jpg', alt: 'Slide 5' },
+    { src: 'assets/images/carrossel/sala-de-estar.jpg', alt: 'Slide 6' }
   ];
 
   categorias: string[] = [
