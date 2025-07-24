@@ -1,9 +1,9 @@
 <section id="lista-produtos">
   <div id="container-lista-produtos">
 
-    <div id="cabecalho-catalogo">
+    <!-- <div id="cabecalho-catalogo">
       <div id="titulo-cobecalho-catalogo">
-        <h1>Catálogo</h1>
+        <h1>Conheça nosso catálogo</h1>
       </div>
       <div id="">
         <a href="/assets/pdf/silver-and-gold-catalogo.pdf" target="_blank" id="download-catalogo">
@@ -11,9 +11,9 @@
           <i class="bi bi-download"></i>
         </a>
       </div>
-    </div>
+    </div> -->
 
-    <div id="filtragem">
+    <!-- <div id="filtragem">
       <div id="filtragem-titulo">
         <h5>
           {{ categoriaAtual }}
@@ -34,9 +34,40 @@
           }
         </nav>
       </div>
+    </div> -->
+
+    <div id="container-catalogo">
+      <div id="capa-catalogo">
+        <a href="/assets/pdf/silver-and-gold-catalogo.pdf" target="_blank"><img src="/assets/pdf/catalogo-capa.png"
+            alt="Capa do Catálogo Gold & Silver"> </a>
+      </div>
+      <div id="conteudo-catalogo">
+        <div id="titulo-catalogo">
+          <h2>Transforme Ambientes. Inspire Escolhas.</h2>
+        </div>
+        <div id="texto-catalogo">
+          <p>
+            Descubra um universo de elegância e funcionalidade com o catálogo exclusivo da <strong>Gold & Silver
+              Distribuição</strong>.
+            Móveis e eletrodomésticos pensados para quem valoriza estilo, conforto e excelência em cada detalhe.
+            <br><br>
+            Seja para renovar seu espaço, equipar sua loja ou surpreender seus clientes, nosso catálogo reúne as
+            melhores oportunidades do mercado — com <strong>design atual, durabilidade comprovada e condições especiais
+              de aquisição</strong>.
+            <br><br>
+            Dê o primeiro passo rumo a uma escolha inteligente e sofisticada. Baixe agora e surpreenda-se com tudo o que
+            preparamos para você.
+          </p>
+        </div>
+        <div id="container-download-catalogo">
+          <a href="/assets/pdf/silver-and-gold-catalogo.pdf" target="_blank" id="download-catalogo">
+            Baixar Catálogo <i class="bi bi-download"></i>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <div id="grid-produtos">
+    <!-- <div id="grid-produtos">
       @for (produto of produtosPaginados; track produto.nomeDoProduto) {
       <a [routerLink]="['/produto', produto.id]" class="card-link">
         <app-card-produto [produto]="produto" />
@@ -58,6 +89,6 @@
         [disabled]="paginaAtual === totalPaginas">›</button>
       <button (click)="go('#lista-produtos', $event); mudarPagina(totalPaginas)"
         [disabled]="paginaAtual === totalPaginas">»</button>
-    </div>
+    </div> -->
   </div>
 </section>
