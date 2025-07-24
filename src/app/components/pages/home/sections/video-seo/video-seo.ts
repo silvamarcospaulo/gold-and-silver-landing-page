@@ -36,7 +36,7 @@ export class VideoSeo implements AfterViewInit {
     this.player = new YT.Player('player-placeholder', {
       height: '100%',
       width: '100%',
-      videoId: 's7bVEOZMnbc',
+      videoId: 'JYY4BoQBJ9k',
       playerVars: {
         autoplay: 0,
         controls: 0,
@@ -44,7 +44,7 @@ export class VideoSeo implements AfterViewInit {
         rel: 0,
         playsinline: 1,
         loop: 1,
-        playlist: 's7bVEOZMnbc'
+        playlist: 'JYY4BoQBJ9k'
       },
       events: {
         onReady: (event: any) => {

@@ -121,3 +121,18 @@
         padding: 0;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bloco-video {
+        flex-direction: column;
+
+        video,
+        .texto-video {
+            width: 100%;
+        }
+
+        &.inverso {
+            flex-direction: column-reverse;
+        }
+    }
+}

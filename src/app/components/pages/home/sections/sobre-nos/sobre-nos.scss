@@ -21,6 +21,10 @@
     display: flex;
     place-content: center;
     place-items: center;
+
+    img {
+        width: 100%;
+    }
 }
 
 #texto-institucional {
@@ -55,6 +59,16 @@
     }
 
     #texto-institucional {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #container-sobre-nos {
+        flex-direction: column;
+    }
+
+    #video-institucional {
         width: 100%;
     }
 }
