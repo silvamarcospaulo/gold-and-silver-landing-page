@@ -19,17 +19,51 @@
 
 #cabecalho-catalogo {
     width: 100%;
+    min-height: 5vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    place-items: center;
+    flex-direction: row;
+}
+
+#titulo-cobecalho-catalogo {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    place-content: start;
+    place-items: center;
     padding: 1rem;
     color: var(--color-text);
 
     h1 {
         color: var(--color-text);
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-align: start;
         margin-right: 0.5rem;
+    }
+}
+
+#download-catalogo {
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-text);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: transform 0.25s ease;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    text-decoration: none;
+
+    i {
+        margin-left: 0.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.04);
     }
 }
 
@@ -150,7 +184,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 2rem;
     padding: 2rem 0;
 }
@@ -209,11 +243,27 @@
         width: 100vw;
     }
 
+    #cabecalho-catalogo {
+        flex-direction: column;
+    }
+
+    #titulo-cobecalho-catalogo {
+        place-content: center;
+        width: 100%;
+    }
+
+    #nav-list-categoria {
+        left: auto;
+        right: auto;
+        width: 100vw;
+    }
+
     #filtro-categorias {
         flex-direction: column;
     }
 
     #grid-produtos {
+        align-items: center;
         flex-direction: column;
     }
 
@@ -242,5 +292,9 @@
 
     #paginacao button {
         padding: 0.5rem 1rem;
+    }
+
+    #filtro-categorias {
+        flex-direction: column;
     }
 }

@@ -1,12 +1,18 @@
 <section id="lista-produtos">
   <div id="container-lista-produtos">
+
     <div id="cabecalho-catalogo">
-      <h1>Catálogo</h1>
-      <a href="silver-and-gold-catalogo.pdf" class="categoria-link">
-        <i class="bi bi-download"></i>
-        Download Catálogo
-      </a>
+      <div id="titulo-cobecalho-catalogo">
+        <h1>Catálogo</h1>
+      </div>
+      <div id="">
+        <a href="/assets/pdf/silver-and-gold-catalogo.pdf" target="_blank" id="download-catalogo">
+          Download
+          <i class="bi bi-download"></i>
+        </a>
+      </div>
     </div>
+
     <div id="filtragem">
       <div id="filtragem-titulo">
         <h5>
@@ -22,8 +28,7 @@
         </div>
         <nav id="nav-list-categoria" [class.open]="menuAberto">
           @for (categoria of categorias; track categoria) {
-          <button class="categoria-link"
-            (click)="go('#lista-produtos', $event); selecionarCategoria(categoria)">
+          <button class="categoria-link" (click)="go('#lista-produtos', $event); selecionarCategoria(categoria)">
             {{ categoria }}
           </button>
           }
@@ -44,8 +49,8 @@
       <button (click)="go('#lista-produtos', $event); mudarPagina(paginaAtual - 1)"
         [disabled]="paginaAtual === 1">‹</button>
 
-      <button *ngFor="let pagina of paginasExibidas"
-        (click)="go('#lista-produtos', $event); mudarPagina(pagina)" [class.ativa]="paginaAtual === pagina">
+      <button *ngFor="let pagina of paginasExibidas" (click)="go('#lista-produtos', $event); mudarPagina(pagina)"
+        [class.ativa]="paginaAtual === pagina">
         {{ pagina }}
       </button>
 
