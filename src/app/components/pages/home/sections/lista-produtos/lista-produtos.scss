@@ -74,15 +74,18 @@
 }
 
 #container-catalogo {
+    margin-top: 10vh;
+    padding: 3rem;
     display: flex;
     width: 100%;
-    height: 60%;
+    height: 100%;
     place-content: center;
     place-items: center;
+    gap: 1.5rem;
 }
 
 #capa-catalogo {
-    width: 50%;
+    width: 30%;
     display: flex;
     place-content: center;
     place-items: center;
@@ -93,11 +96,10 @@
 }
 
 #conteudo-catalogo {
-    width: 40%;
-    padding: 2rem;
+    width: 100%;
     display: flex;
-    place-content: center;
-    place-items: center;
+    place-content: start;
+    place-items: start;
     flex-direction: column;
 }
 
@@ -269,10 +271,16 @@
 
 @media screen and (max-width: 1024px) {
     #container-catalogo {
-        flex-direction: column;
         align-items: center;
         height: auto;
         padding: 2rem 1rem;
+        margin-top: 3vh;
+        flex-direction: column-reverse;
+        gap: 0;
+
+        img {
+            width: 80vw;
+        }
     }
 
     #capa-catalogo {
@@ -355,6 +363,13 @@
 @media screen and (max-width: 480px) {
     #container-catalogo {
         padding: 1rem 0.5rem;
+        margin-top: 3vh;
+        flex-direction: column-reverse;
+        gap: 0;
+
+        img {
+            width: 80vw;
+        }
     }
 
     #capa-catalogo img {

@@ -15,7 +15,7 @@ export class Inicio implements OnInit, OnDestroy {
   promoItems: PromoItem[] = [
     // { label: 'LOJA ATACADISTA', description: 'Atendemos lojistas e revendedores', icon: 'bi bi-shop' },
     { label: 'PARCELAMENTO', description: 'Parcele em até 12x com juros', icon: 'bi bi-credit-card-fill' },
-    { label: 'PEDIDOS', description: 'Pode retirar no DC', icon: 'bi bi-tag' },
+    { label: 'PEDIDOS', description: 'Pode retirar no CDI', icon: 'bi bi-tag' },
     { label: 'FRETE GRÁTIS', description: 'Entregamos em todas as regiões', icon: 'bi bi-truck' },
     { label: '1 ANO DE GARANTIA', description: 'Garantia de fábrica', icon: 'bi bi-award' }
   ];
