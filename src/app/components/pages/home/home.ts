@@ -51,6 +51,79 @@ export class Home {
   produtos: Produto[] =
     [
       {
+        "id": 183454,
+        "categoria": [
+          "Cômoda"
+        ],
+        "nomeDoProduto": "COMODA DETROIT NEW - JEQUITIBA / OFF WHITE",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745855832680fa55860f4c.webp"
+      },
+      {
+        "id": 183462,
+        "categoria": [
+          "Cama"
+        ],
+        "nomeDoProduto": "COMODA ARAMOVEIS 1 P 5G - ATACAMA",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745855833680fa559afae9.webp"
+      },
+
+      {
+        "id": 181884,
+        "categoria": [
+          "Roupeiros"
+        ],
+        "nomeDoProduto": "ROUPEIRO SANTIAGO 2 PORTAS - OFF WHITE",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745855877680fa58544ad4.webp"
+      },
+      {
+        "id": 184404,
+        "categoria": [
+          "Estante"
+        ],
+        "nomeDoProduto": "HOME SUSPENSO AVANT 1.4 C/ NICHO - CEDRO",
+        "imagem": "https://phizclip-assets.phiz.live/converted/phizshop/pro/Store/Goods/2025-04-23/1745434307680936c37bdd3.webp"
+      },
+      {
+        "id": 204399,
+        "categoria": [
+          "TV"
+        ],
+        "nomeDoProduto": "SMART TV TRONOS ''55'' POLEGADAS",
+        "imagem": "https://phizclip-assets.phiz.live/converted/phizshop/pro/Store/Goods/2025-05-21/1747865562682e4fda774b6.webp"
+      },
+      {
+        "id": 206134,
+        "categoria": [
+          "Mesa"
+        ],
+        "nomeDoProduto": "MESA DE ESCRITÓRIO 3 GAVETAS - BRANCO",
+        "imagem": "https://phizclip-assets.phiz.live/converted/phizshop/pro/Store/Goods/2025-07-04/17516391746867e4860538b.webp"
+      },
+      {
+        "id": 183621,
+        "categoria": [
+          "Cadeira"
+        ],
+        "nomeDoProduto": "CADEIRA ESTOFADA ALBERTO VELUDO 406 - COR 07 CX C/ 2 - GRAFITE",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745843869680f769d79509.webp"
+      },
+      {
+        "id": 183723,
+        "categoria": [
+          "Cama"
+        ],
+        "nomeDoProduto": "BASE PARA CAMA CASAL SCALIBUR - 1.38 X 1.88",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745843879680f76a777658.webp"
+      },
+      {
+        "id": 182502,
+        "categoria": [
+          "Sapateiras"
+        ],
+        "nomeDoProduto": "MULTIUSO NEW ARAMOVEIS - BRANCO",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745855713680fa4e18d34c.webp"
+      },
+      {
         "id": 184021,
         "categoria": [
           "Roupeiros"
@@ -11105,7 +11178,15 @@ export class Home {
         ],
         "nomeDoProduto": "ROUP. COMODA TERESINA PLUS - ACACIA / REFLECTA ATUALLE",
         "imagem": "https://phizclip-assets.phiz.live/converted/phizshop/pro/Store/Goods/2025-07-04/17516403066867e8f2e725d.webp"
-      }
+      },
+      {
+        "id": 181772,
+        "categoria": [
+          "TV"
+        ],
+        "nomeDoProduto": "SUPORTE PARA TV",
+        "imagem": "https://phizclip-assets.s3.sa-east-1.amazonaws.com/phizshop/pro/Store/Goods/2025-04-28/1745856109680fa66dbf49f.webp"
+      },
     ]
 
   categoriaFiltrada: string | null = null;

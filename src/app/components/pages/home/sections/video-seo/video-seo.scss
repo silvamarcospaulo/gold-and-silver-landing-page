@@ -159,81 +159,47 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    #texto-beneficios-revendedor {
-        padding: 2rem;
-        width: 100%;
-        display: flex;
-        place-content: center;
-        place-items: center;
-    }
-
-    #botao-quero-ser-um-revendedor {
-        width: 50%;
-        display: flex;
-        place-content: center;
-        place-items: center;
-
-    }
-
     #container-video-seo {
-        width: 100%;
         flex-direction: column;
         place-items: center;
     }
 
     #video-titulo {
-        width: 100%;
         flex-direction: column;
     }
 
     #titulo-video-seo {
-        width: 100%;
         writing-mode: unset;
     }
 
-    #vantagens {
-        width: 50%;
-        display: flex;
-        place-content: center;
-        place-items: start;
-        flex-direction: column;
-    }
-
     #subtitulo-video-seo {
-        width: 100%;
         writing-mode: unset;
         font-size: clamp(3.5rem, 4vw, 2.5rem);
         margin-bottom: 1.5rem;
     }
 
     #titulo-subtitulo-video-seo {
-        display: flex;
-        place-content: center;
-        place-items: center;
         flex-direction: column;
-        flex-direction: column;
-    }
-
-    #container-video-seo {
-        width: 100vw;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #video-titulo {
         width: 100%;
-        flex-direction: column;
-    }
-
-    #titulo-video-seo,
-    #subtitulo-video-seo {
-        width: 100%;
-        writing-mode: unset;
     }
 
     .video-wrapper {
-        width: 100%;
+        min-height: auto;
         height: auto;
+        width: 100%;
+        margin-bottom: 1.5rem;
         aspect-ratio: 16 / 9;
+    }
+
+    #texto-beneficios-revendedor {
+        width: 100%;
+        align-items: center;
+    }
+
+    #botao-quero-ser-um-revendedor {
+        a {
+            padding: 1rem 2rem;
+            font-size: 20px;
+        }
     }
 }
