@@ -17,7 +17,7 @@ export class Inicio implements OnInit, OnDestroy {
     { label: 'PARCELAMENTO', description: 'Parcele em até 12x com juros', icon: 'bi bi-credit-card-fill' },
     { label: 'PEDIDOS', description: 'Pode retirar no Centro de Distribuição', icon: 'bi bi-tag' },
     { label: 'FRETE GRÁTIS', description: 'Entregamos em todas as regiões', icon: 'bi bi-truck' },
-    { label: '1 ANO DE GARANTIA', description: 'Garantia de fábrica', icon: 'bi bi-award' }
+    { label: 'GARANTIA', description: 'Garantia de fábrica', icon: 'bi bi-award' }
   ];
 
   currentIndex = 0;
