@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ScrollService } from '../../../../../core/services/scroll.service';
+import { ScrollService } from '../../../../../core/services/scroll/scroll.service';
 import { Link } from '../../../../../core/models/link/link';
 import { CommonModule } from '@angular/common';
 

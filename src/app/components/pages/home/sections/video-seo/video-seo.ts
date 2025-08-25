@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { PixelLinkWhatsappService } from '../../../../../core/services/pixel/pixel-link-whatsapp/pixel-link-whatsapp.service';
 
 declare var YT: any;
 
@@ -9,9 +11,15 @@ declare var YT: any;
   templateUrl: './video-seo.html',
   styleUrl: './video-seo.scss'
 })
+
 export class VideoSeo implements AfterViewInit {
   @ViewChild('iframeWrapper', { static: false }) wrapperRef!: ElementRef<HTMLDivElement>;
   private player: any;
+
+  constructor(
+    private snackBar: MatSnackBar,
+    private pixel: PixelLinkWhatsappService
+  ) { }
 
   ngAfterViewInit(): void {
     this.loadYouTubeAPI();
@@ -71,5 +79,22 @@ export class VideoSeo implements AfterViewInit {
     );
 
     observer.observe(wrapper);
+  }
+
+  clicarWhatsapp(event: Event) {
+    event.preventDefault();
+    const link = "https://wa.me/5564984101024?text=Ol%C3%A1%2C%20quero%20ser%20um%20revendedor%20autorizado%20Gold%20%26%20Silver"
+    this.pixel.trackWhatsappClick('footer', {
+      telefone: '(64) 98410-1024',
+      link: link
+    });
+
+    this.snackBar.open(
+      'Este site utiliza cookies para melhorar sua experiência e personalizar anúncios. Ao clicar no WhatsApp, você concorda com o uso de cookies.',
+      '',
+      { duration: 1000, horizontalPosition: 'center', verticalPosition: 'bottom' }
+    );
+
+    window.open(link, '_blank');
   }
 }

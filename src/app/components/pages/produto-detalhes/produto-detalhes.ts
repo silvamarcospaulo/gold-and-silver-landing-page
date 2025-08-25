@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderDetalhes } from './header-detalhes/header-detalhes';
 import { Footer } from '../../reutilizaveis/footer/footer';
 import { Produto } from '../../../core/models/produto/produto';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { PixelLinkWhatsappService } from '../../../core/services/pixel/pixel-link-whatsapp/pixel-link-whatsapp.service';
 
 @Component({
   selector: 'app-produto-detalhes',
@@ -11085,5 +11087,27 @@ export class ProdutoDetalhes implements OnInit {
 
   mockBuscarProduto(id: number): Produto | undefined {
     return this.produtos.find(p => p.id === id);
+  };
+
+  constructor(
+    private snackBar: MatSnackBar,
+    private pixel: PixelLinkWhatsappService
+  ) { }
+
+  clicarWhatsapp(event: Event, numero: string, link: string) {
+    event.preventDefault();
+
+    this.pixel.trackWhatsappClick('produto-detalhes', {
+      telefone: numero,
+      link: link
+    });
+
+    this.snackBar.open(
+      'Este site utiliza cookies para melhorar sua experiência e personalizar anúncios. Ao clicar no WhatsApp, você concorda com o uso de cookies.',
+      '',
+      { duration: 1000, horizontalPosition: 'center', verticalPosition: 'bottom' }
+    );
+
+    window.open(link, '_blank');
   }
 }

@@ -15,7 +15,9 @@
 
             <div id="cta">
                 <a href="https://wa.me/5564984101024?text=Ol%C3%A1%2C%20quero%20ser%20um%20revendedor%20autorizado%20Gold%20%26%20Silver"
-                    target="_blank" aria-label="Botão WhatsApp" id="comprar">Quero ser um revendedor autorizado <i
+                    target="_blank"
+                    (click)="clicarWhatsapp($event, '(64) 98410-1024', 'https://api.whatsapp.com/send?phone=5564984101024')"
+                    aria-label="Botão WhatsApp" id="comprar">Quero ser um revendedor autorizado <i
                         class="bi bi-whatsapp"></i></a>
             </div>
         </div>

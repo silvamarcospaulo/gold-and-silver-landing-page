@@ -9,7 +9,7 @@ import { CardProduto } from './card-produto/card-produto';
 import { RouterModule } from '@angular/router';
 import { Produto } from '../../../../../core/models/produto/produto';
 import { CommonModule } from '@angular/common';
-import { ScrollService } from '../../../../../core/services/scroll.service';
+import { ScrollService } from '../../../../../core/services/scroll/scroll.service';
 
 @Component({
   selector: 'app-lista-produtos',
