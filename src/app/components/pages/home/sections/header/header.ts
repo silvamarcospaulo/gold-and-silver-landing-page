@@ -19,10 +19,32 @@ export class Header {
 
   constructor(private scroll: ScrollService) { }
 
+  get internalLinks() {
+    return this.linksHeader.filter(link => !this.isExternalLink(link.url));
+  }
+
+  get externalLinks() {
+    return this.linksHeader.filter(link => this.isExternalLink(link.url));
+  }
+
   go(url: string, event: Event) {
+    if (this.isExternalLink(url)) {
+      this.menuAberto = false;
+      return;
+    }
+
     event.preventDefault();
     const id = url.replace(/^#/, '');
     this.scroll.scrollTo(id);
+    this.menuAberto = false;
+  }
+
+  isExternalLink(url: string) {
+    return /^https?:\/\//.test(url);
+  }
+
+  isAuctionLink(url: string) {
+    return url.includes('leilao.');
   }
 
   menuAberto = false;

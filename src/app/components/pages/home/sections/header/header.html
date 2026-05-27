@@ -5,9 +5,22 @@
         <button id="menu-toggle-header" (click)="toggleMenu()">&#9776;</button>
 
         <nav id="nav-list-header" [class.open]="menuAberto">
-            <button class="categoria-link" *ngFor="let link of linksHeader" (click)="go(link.url, $event)">
-                {{ link.label }}
-            </button>
+            <div class="nav-links">
+                <a class="categoria-link" *ngFor="let link of internalLinks" [href]="link.url"
+                    (click)="go(link.url, $event)">
+                    {{ link.label }}
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <a class="categoria-link action-link" *ngFor="let link of externalLinks" [href]="link.url"
+                    target="_blank" rel="noopener noreferrer" [class.primary-action]="isAuctionLink(link.url)"
+                    (click)="go(link.url, $event)">
+                    <i class="bi" [class.bi-hammer]="isAuctionLink(link.url)"
+                        [class.bi-journal-text]="!isAuctionLink(link.url)"></i>
+                    {{ link.label }}
+                </a>
+            </div>
         </nav>
     </div>
 </header>
