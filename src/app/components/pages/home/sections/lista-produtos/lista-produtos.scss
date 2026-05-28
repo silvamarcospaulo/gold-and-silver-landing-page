@@ -1,9 +1,11 @@
 #lista-produtos {
     width: 100%;
+    max-width: 100%;
     display: flex;
     place-content: center;
     place-items: center;
     background-color: var(--color-secondary);
+    overflow-x: clip;
 }
 
 #container-lista-produtos {
@@ -58,7 +60,6 @@
 #apresentacao-leilao {
     position: relative;
     width: 100%;
-    margin-top: 10vh;
     padding: 2.75rem 3rem;
     display: grid;
     grid-template-columns: minmax(20rem, 1fr) minmax(19rem, 0.72fr);
@@ -214,6 +215,7 @@
 
 #apresentacao-catalogo {
     width: 100%;
+    max-width: 100%;
     min-height: 43rem;
     display: grid;
     grid-template-columns: minmax(18rem, 0.9fr) minmax(20rem, 1fr);

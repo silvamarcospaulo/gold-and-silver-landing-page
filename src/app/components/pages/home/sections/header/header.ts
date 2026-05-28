@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { ScrollService } from '../../../../../core/services/scroll/scroll.service';
 import { Link } from '../../../../../core/models/link/link';
 import { CommonModule } from '@angular/common';
@@ -16,6 +16,9 @@ export class Header {
   @Output() scrollParaProdutos = new EventEmitter<void>();
 
   @Input() linksHeader!: Link[];
+  headerHidden = false;
+  private lastScrollY = 0;
+  private readonly scrollTolerance = 12;
 
   constructor(private scroll: ScrollService) { }
 
@@ -51,11 +54,29 @@ export class Header {
 
   toggleMenu() {
     this.menuAberto = !this.menuAberto;
+    this.headerHidden = false;
   }
 
   selecionarCategoria(categoria: string) {
     this.menuAberto = false;
     this.categoriaSelecionada.emit(categoria);
     this.scrollParaProdutos.emit();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    const scrollingDown = currentScrollY > this.lastScrollY + this.scrollTolerance;
+    const scrollingUp = currentScrollY < this.lastScrollY - this.scrollTolerance;
+
+    if (this.menuAberto || currentScrollY < 80) {
+      this.headerHidden = false;
+    } else if (scrollingDown) {
+      this.headerHidden = true;
+    } else if (scrollingUp) {
+      this.headerHidden = false;
+    }
+
+    this.lastScrollY = Math.max(currentScrollY, 0);
   }
 }

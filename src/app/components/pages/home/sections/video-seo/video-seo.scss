@@ -1,205 +1,173 @@
 #video-seo {
     width: 100%;
-    min-height: 80vh;
-    padding: 4rem 1rem;
-    background-color: var(--color-primary);
+    padding: 5rem 3rem;
     display: flex;
-    place-content: center;
-    place-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(180deg, var(--color-secondary), #101010 62%, var(--color-primary));
 }
 
 #container-video-seo {
     width: 100%;
     max-width: 1400px;
-    display: flex;
-    flex-direction: row;
-    place-content: center;
-    place-items: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: minmax(20rem, 0.8fr) minmax(24rem, 1.2fr);
+    align-items: center;
+    gap: 3rem;
 }
 
-#video-titulo {
+#conteudo-revendedor {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    >span {
+        color: var(--color-accent);
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin: 0;
+        color: var(--color-text);
+        font-size: 2.45rem;
+        line-height: 1.1;
+    }
+
+    p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 1.03rem;
+        line-height: 1.6;
+    }
+}
+
+#vantagens {
     width: 100%;
-    height: 100%;
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.5rem 0;
+
+    p {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--color-text);
+    }
+
+    i {
+        width: 2.25rem;
+        height: 2.25rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        color: var(--color-primary);
+        background-color: var(--color-accent);
+        flex: 0 0 auto;
+    }
+}
+
+#botao-quero-ser-um-revendedor a {
+    min-height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.75rem 1.2rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 999px;
+    color: var(--color-primary);
+    background: linear-gradient(135deg, #d4af37, #ffe08a);
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem rgba(212, 175, 55, 0.24);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.22), 0 1.2rem 2.4rem rgba(212, 175, 55, 0.34);
+    }
+}
+
+#video-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: 8px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+        rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+#video-card-header {
+    min-height: 3rem;
     display: flex;
-    justify-content: space-around;
-    place-items: center;
-}
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--color-text);
 
-#titulo-subtitulo-video-seo {
-    display: flex;
-    place-content: center;
-    place-items: center;
-    flex-direction: row;
-}
-
-#titulo-video-seo {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    color: var(--color-accent);
-    writing-mode: sideways-lr;
-}
-
-#subtitulo-video-seo {
-    writing-mode: sideways-lr;
-    font-size: clamp(4rem, 4vw, 2.5rem);
-    color: var(--color-light);
+    span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--color-accent);
+        font-weight: 800;
+        text-transform: uppercase;
+    }
 }
 
 .video-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
     overflow: hidden;
-    min-height: 30rem;
-    box-shadow: 0 4px 20px rgba(218, 183, 183, 0.3);
-    display: flex;
-}
+    border-radius: 8px;
+    background-color: #000000;
 
-#player-placeholder {
-    width: 100%;
-    height: 100%;
-}
-
-#player-placeholder iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-#texto-beneficios-revendedor {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 1rem;
-
-    h4 {
-        margin: 0;
-    }
-
-    p {
-        font-weight: lighter;
-    }
-
-    strong {
-        font-weight: 1000;
-    }
-
-    i {
-        margin-right: 10px;
-    }
-
-    h6 {
-        font-weight: 100;
+    iframe,
+    #player-placeholder {
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 }
 
-#botao-quero-ser-um-revendedor {
-    display: flex;
-    justify-content: start;
-
-    a {
-        padding: 1rem;
-        text-decoration: none;
-        border-radius: 10px;
-        background-color: var(--color-accent);
-        color: var(--color-primary);
-        transition: 0.2s ease;
-
-        &:hover {
-            transform: scale(1.05);
-        }
+@media screen and (max-width: 1024px) {
+    #video-seo {
+        padding: 4rem 1rem;
     }
-}
 
-@media screen and (max-width: 768px) {
     #container-video-seo {
-        flex-direction: column;
-        place-items: center;
+        grid-template-columns: 1fr;
     }
 
-    #video-titulo {
-        flex-direction: column;
-    }
-
-    #titulo-video-seo {
-        writing-mode: unset;
-    }
-
-    #subtitulo-video-seo {
-        writing-mode: unset;
-        font-size: clamp(3.5rem, 4vw, 2.5rem);
-        margin-bottom: 1.5rem;
-    }
-
-    #titulo-subtitulo-video-seo {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .video-wrapper {
-        min-height: auto;
-        height: auto;
-        width: 100%;
-        margin-bottom: 1.5rem;
-        aspect-ratio: 16 / 9;
-    }
-
-    #texto-beneficios-revendedor {
-        width: 100%;
+    #conteudo-revendedor {
         align-items: center;
-    }
+        text-align: center;
 
-    #botao-quero-ser-um-revendedor {
-        a {
-            padding: 1rem 2rem;
-            font-size: 20px;
+        h2 {
+            font-size: 1.85rem;
         }
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    #container-video-seo {
-        flex-direction: column;
-        place-items: center;
-    }
-
-    #video-titulo {
-        flex-direction: column;
-    }
-
-    #titulo-video-seo {
-        writing-mode: unset;
-    }
-
-    #subtitulo-video-seo {
-        writing-mode: unset;
-        font-size: clamp(3.5rem, 4vw, 2.5rem);
-        margin-bottom: 1.5rem;
-    }
-
-    #titulo-subtitulo-video-seo {
-        flex-direction: column;
+@media screen and (max-width: 520px) {
+    #botao-quero-ser-um-revendedor,
+    #botao-quero-ser-um-revendedor a {
         width: 100%;
     }
 
-    .video-wrapper {
-        min-height: auto;
-        height: auto;
-        width: 100%;
-        margin-bottom: 1.5rem;
-        aspect-ratio: 16 / 9;
-    }
-
-    #texto-beneficios-revendedor {
-        width: 100%;
-        align-items: center;
-    }
-
-    #botao-quero-ser-um-revendedor {
-        a {
-            padding: 1rem 2rem;
-            font-size: 20px;
-        }
+    #video-card {
+        padding: 0.65rem;
     }
 }

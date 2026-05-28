@@ -7,7 +7,9 @@
         <nav class="footer-nav">
             <ul class="footer-nav-list">
                 <li *ngFor="let link of linksFooter">
-                    <a href="#" (click)="go(link.url, $event)">
+                    <a [href]="link.url" (click)="go(link.url, $event)"
+                        [attr.target]="link.url.startsWith('http') ? '_blank' : null"
+                        [attr.rel]="link.url.startsWith('http') ? 'noopener noreferrer' : null">
                         {{ link.label }}
                     </a>
                 </li>

@@ -46,6 +46,13 @@ body {
     --font-family-base: "Bebas Naue", sans-serif;
 }
 
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-primary);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -53,9 +60,21 @@ body {
 }
 
 body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     font-family: var(--font-family-base);
     color: var(--color-text);
-    background-color: var(--color-background);
+    background-color: var(--color-primary);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-root {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-primary);
+}
+
+html, body { min-height: 100%; }

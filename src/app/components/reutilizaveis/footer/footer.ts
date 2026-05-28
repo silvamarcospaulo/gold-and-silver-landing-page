@@ -22,6 +22,10 @@ export class Footer {
   ) { }
 
   go(url: string, event: Event) {
+    if (/^https?:\/\//.test(url)) {
+      return;
+    }
+
     event.preventDefault();
     const id = url.replace(/^#/, '');
     this.scroll.scrollTo(id);

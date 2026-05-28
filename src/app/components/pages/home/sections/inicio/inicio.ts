@@ -13,11 +13,10 @@ export class Inicio implements OnInit, OnDestroy {
   @Input() imagensCarrossel!: CarouselItem[];
 
   promoItems: PromoItem[] = [
-    // { label: 'LOJA ATACADISTA', description: 'Atendemos lojistas e revendedores', icon: 'bi bi-shop' },
-    { label: 'PARCELAMENTO', description: 'Parcele em até 12x com juros', icon: 'bi bi-credit-card-fill' },
-    { label: 'PEDIDOS', description: 'Pode retirar no Centro de Distribuição', icon: 'bi bi-tag' },
-    { label: 'FRETE GRÁTIS', description: 'Entregamos em todas as regiões', icon: 'bi bi-truck' },
-    { label: 'GARANTIA', description: 'Garantia de fábrica', icon: 'bi bi-award' }
+    { label: 'CATÁLOGO', description: 'Produtos organizados para pesquisar e comparar', icon: 'bi bi-journal-text' },
+    { label: 'LEILÕES', description: 'Lotes com oportunidades para acompanhar online', icon: 'bi bi-hammer' },
+    { label: 'ATACADO', description: 'Condições pensadas para lojistas e revendedores', icon: 'bi bi-shop' },
+    { label: 'ATENDIMENTO', description: 'Equipe disponível para orientar a melhor compra', icon: 'bi bi-whatsapp' }
   ];
 
   currentIndex = 0;

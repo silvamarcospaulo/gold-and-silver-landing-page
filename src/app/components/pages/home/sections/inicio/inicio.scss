@@ -1,134 +1,146 @@
 #inicio {
     width: 100%;
-    background-color: var(--color-primary);
-    flex-direction: column;
     display: flex;
-    place-items: center;
-    place-content: center;
+    justify-content: center;
+    background:
+        linear-gradient(180deg, #000000 0%, var(--color-secondary) 100%);
+}
 
+#promocionais {
+    width: 100%;
+    max-width: 1400px;
+    padding: 4rem 3rem 3rem;
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.75fr) minmax(24rem, 1.25fr);
+    align-items: stretch;
+    gap: 2rem;
+}
 
-    #promocionais {
-        width: 100%;
-        height: auto;
-        background-color: var(--color-secondary);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+#intro-promocionais {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 0;
 
-        .promo-grid {
-            width: 100%;
-            height: 100%;
-            max-width: 1400px;
-            display: flex;
-            justify-content: space-between;
-            place-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .promo-carousel {
-            width: 100%;
-            overflow: hidden;
-            max-width: 1400px;
-
-            .carousel-track {
-                display: flex;
-                width: 100%;
-                transition: transform 0.5s ease-in-out;
-            }
-        }
-
-        .promo-card {
-            display: flex;
-            place-content: center;
-            place-items: center;
-            flex-direction: column;
-            height: 100%;
-            max-width: 200px;
-            background-color: var(--color-secondary);
-            color: var(--color-text);
-            transition: transform 0.3s ease;
-            text-align: center;
-            flex: 0 0 100%;
-            padding: 1rem;
-
-            &:hover {
-                transform: translateY(-3px);
-            }
-
-            .promo-icon {
-                font-size: clamp(1.5rem, 4vw, 2.5rem);
-                color: var(--color-accent);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                i {
-                    fill: var(--color-accent);
-                }
-            }
-
-            .promo-text {
-                h3 {
-                    font-size: clamp(1rem, 2.5vw, 1.5rem);
-                    color: var(--color-accent);
-                }
-
-                p {
-                    margin: 0;
-                    font-size: clamp(0.75rem, 2vw, 1rem);
-                    color: var(--color-light);
-                }
-            }
-        }
-
-        .desktop-only {
-            display: flex;
-        }
-
-        .mobile-only {
-            display: none;
-        }
+    span {
+        color: var(--color-accent);
+        font-weight: 800;
+        text-transform: uppercase;
     }
 
-    @media (max-width: 768px),
-    (pointer: coarse) and (max-width: 1024px) {
-        #carousel-inicio .carousel-img {
-            max-height: 400px;
-        }
+    h2 {
+        margin: 0;
+        color: var(--color-text);
+        font-size: 2.25rem;
+        line-height: 1.12;
+    }
 
-        #promocionais {
-            .promo-grid {
-                display: none;
-            }
+    p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
 
-            .promo-carousel {
-                display: block;
-            }
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
 
-            .promo-card {
-                max-width: 100%;
+.promo-carousel {
+    display: none;
+    width: 100%;
+    overflow: hidden;
 
-                .promo-icon {
-                    font-size: clamp(2rem, 6vw, 3rem);
-                }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+}
 
-                .promo-text h3 {
-                    font-size: clamp(1.2rem, 5vw, 1.8rem);
-                }
+.promo-card {
+    min-height: 12rem;
+    min-width: 0;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    color: var(--color-text);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03)),
+        rgba(0, 0, 0, 0.24);
+    transition: transform 0.25s ease, border-color 0.25s ease;
 
-                .promo-text p {
-                    font-size: clamp(0.9rem, 4vw, 1.2rem);
-                }
-            }
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(212, 175, 55, 0.5);
+    }
+}
 
-            .desktop-only {
-                display: none;
-            }
+.promo-icon {
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: var(--color-primary);
+    background: linear-gradient(135deg, #d4af37, #ffe08a);
+    font-size: 1.25rem;
+}
 
-            .mobile-only {
-                display: block;
-            }
-        }
+.promo-text {
+    h3 {
+        margin: 0 0 0.45rem;
+        color: var(--color-accent);
+        font-size: 1.1rem;
+        line-height: 1.15;
+    }
+
+    p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 1024px) {
+    #promocionais {
+        grid-template-columns: 1fr;
+        padding: 3rem 1rem;
+    }
+
+    #intro-promocionais {
+        text-align: center;
+        align-items: center;
+    }
+
+    .promo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    #intro-promocionais h2 {
+        font-size: 1.65rem;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .promo-carousel .promo-card {
+        flex: 0 0 100%;
+        min-height: 10rem;
     }
 }
