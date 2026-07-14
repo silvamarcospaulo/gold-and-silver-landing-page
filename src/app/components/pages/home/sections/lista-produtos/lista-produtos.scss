@@ -125,6 +125,19 @@
     }
 }
 
+#nota-leilao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    font-style: italic;
+
+    i {
+        color: var(--color-accent);
+    }
+}
+
 #mockup-leilao {
     position: relative;
     z-index: 1;
@@ -500,6 +513,10 @@
     }
 
     #status-leilao {
+        justify-content: center;
+    }
+
+    #nota-leilao {
         justify-content: center;
     }
 

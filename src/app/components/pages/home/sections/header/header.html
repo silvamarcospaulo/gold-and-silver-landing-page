@@ -1,8 +1,10 @@
 <header id="header" [class.header-hidden]="headerHidden">
     <div id="container-header">
-        <div id="logo-header"><img src="assets/images/logo/logo-horizontal.png" alt="Logo Gold & Silver" /></div>
+        <div class="header-top">
+            <div id="logo-header"><img src="assets/images/logo/logo-horizontal.png" alt="Logo Gold & Silver" /></div>
 
-        <button id="menu-toggle-header" (click)="toggleMenu()">&#9776;</button>
+            <button id="menu-toggle-header" (click)="toggleMenu()">&#9776;</button>
+        </div>
 
         <nav id="nav-list-header" [class.open]="menuAberto">
             <div class="nav-links">
@@ -11,16 +13,16 @@
                     {{ link.label }}
                 </a>
             </div>
-
-            <div class="nav-actions">
-                <a class="categoria-link action-link" *ngFor="let link of externalLinks" [href]="link.url"
-                    target="_blank" rel="noopener noreferrer" [class.primary-action]="isAuctionLink(link.url)"
-                    (click)="go(link.url, $event)">
-                    <i class="bi" [class.bi-hammer]="isAuctionLink(link.url)"
-                        [class.bi-journal-text]="!isAuctionLink(link.url)"></i>
-                    {{ link.label }}
-                </a>
-            </div>
         </nav>
+
+        <div class="header-actions">
+            <a class="categoria-link action-link" *ngFor="let link of externalLinks" [href]="link.url"
+                target="_blank" rel="noopener noreferrer" [class.primary-action]="isAuctionLink(link.url)"
+                (click)="go(link.url, $event)">
+                <i class="bi" [class.bi-hammer]="isAuctionLink(link.url)"
+                    [class.bi-journal-text]="!isAuctionLink(link.url)"></i>
+                <span class="action-label">{{ link.label }}</span>
+            </a>
+        </div>
     </div>
 </header>
