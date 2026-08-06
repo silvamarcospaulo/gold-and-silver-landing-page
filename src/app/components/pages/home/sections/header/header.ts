@@ -50,6 +50,10 @@ export class Header {
     return url.includes('leilao.');
   }
 
+  isStoreLink(url: string) {
+    return url.includes('loja.');
+  }
+
   menuAberto = false;
 
   toggleMenu() {

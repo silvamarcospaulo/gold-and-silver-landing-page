@@ -22,6 +22,7 @@ export class Home {
     { label: 'Home', url: '#carousel-inicio' },
     { label: 'Seja um revendedor autorizado', url: '#video-seo' },
     { label: 'Catálogo', url: 'https://catalogo.goldesilverdistribuicao.com.br/' },
+    { label: 'Loja', url: 'https://loja.goldesilverdistribuicao.com.br/' },
     { label: 'Leilões', url: 'https://leilao.goldesilverdistribuicao.com.br/' },
     { label: 'Sobre nós', url: '#sobre-nos' },
   ];

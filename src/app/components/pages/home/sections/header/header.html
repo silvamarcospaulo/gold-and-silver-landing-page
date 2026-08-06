@@ -20,7 +20,8 @@
                 target="_blank" rel="noopener noreferrer" [class.primary-action]="isAuctionLink(link.url)"
                 (click)="go(link.url, $event)">
                 <i class="bi" [class.bi-hammer]="isAuctionLink(link.url)"
-                    [class.bi-journal-text]="!isAuctionLink(link.url)"></i>
+                    [class.bi-shop]="isStoreLink(link.url)"
+                    [class.bi-journal-text]="!isAuctionLink(link.url) && !isStoreLink(link.url)"></i>
                 <span class="action-label">{{ link.label }}</span>
             </a>
         </div>
